@@ -1,6 +1,6 @@
 import "./sidebar.scss";
-import { Container } from "react-bootstrap";
-import logo from "../../assets/images/LOGO.png";
+import { Container, Row, Col } from "react-bootstrap";
+import logo from "../../assets/images/LOGO.svg";
 import { AiFillHome } from "react-icons/ai";
 import { BsFillCalendarRangeFill } from "react-icons/bs";
 import { FaTasks } from "react-icons/fa";
@@ -11,41 +11,41 @@ import { BsFillCloudSunFill } from "react-icons/bs";
 
 export const Sidebar = () => {
   return (
-    <Container fluid className="p-0 bg-sidebar">
+    <Container fluid className="p-0 bg-sidebar d-none d-lg-block">
       <Container className="d-flex align-items-center py-4 px-5">
-        <img src={logo} alt="" />
-        <h4 className="ms-3 mb-0">DashBoard</h4>
+        <img src={logo} alt="" className="d-none d-lg-block" />
+        <h4 className="ms-3 mb-0 d-none d-lg-block">DashBoard</h4>
       </Container>
-      <Container className="d-flex flex-column px-5">
+      <Container className="d-flex flex-column px-1 px-lg-5">
         <div className="first-menu p-3 ">
           <p className="mb-0 main-menu">Main menu</p>
         </div>
         <div className="bg-menu first-menu p-3 ">
-          <AiFillHome className="text-black iconSideBar" />
+          <AiFillHome className=" iconSideBar" />
           <p className="text-sidebar ms-2 mb-0">Home</p>
         </div>
         <div className="bg-menu p-3">
-          <BsFillCalendarRangeFill className="text-info iconSideBar" />
+          <BsFillCalendarRangeFill className=" iconSideBar" />
           <p className="text-sidebar ms-2">Calendar</p>
         </div>
         <div className="bg-menu p-3">
-          <FaTasks className="text-secondary iconSideBar" />
+          <FaTasks className=" iconSideBar" />
           <p className="text-sidebar ms-2 ">Tasks</p>
         </div>
         <div className="bg-menu p-3">
-          <FaCashRegister className="text-success iconSideBar" />
+          <FaCashRegister className=" iconSideBar" />
           <p className="text-sidebar ms-2">Expanse Tracker</p>
         </div>
         <div className="bg-menu p-3">
-          <AiFillDollarCircle className="text-danger iconSideBar" />
+          <AiFillDollarCircle className="iconSideBar" />
           <p className="text-sidebar ms-2">Finance</p>
         </div>
         <div className="bg-menu p-3">
-          <BiNews className="text-primary iconSideBar" />
+          <BiNews className=" iconSideBar" />
           <p className="text-sidebar ms-2">News</p>
         </div>
         <div className="bg-menu last-menu p-3">
-          <BsFillCloudSunFill className="text-warning iconSideBar" />
+          <BsFillCloudSunFill className=" iconSideBar" />
           <p className="text-sidebar ms-2">Weather</p>
         </div>
       </Container>

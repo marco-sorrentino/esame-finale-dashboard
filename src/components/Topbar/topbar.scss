@@ -1,0 +1,27 @@
+.profileBar {
+  height: 70px;
+
+  .portrait {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+  }
+
+  p {
+    letter-spacing: -0.085em;
+    color: #3e3e3e;
+    font-weight: 700;
+    font-size: 18px;
+  }
+
+  .iconTopBar {
+    font-size: 1.4em;
+    transition: all ease-in-out 0.4s;
+    &:hover {
+      transform: scale(1.3);
+      cursor: pointer;
+    }
+  }
+}
