@@ -10,7 +10,7 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <Container className="p-0 m-0">
+        <Container fluid>
           <Row>
             <Col md={3} className="p-0">
               <NavbarMobile />
