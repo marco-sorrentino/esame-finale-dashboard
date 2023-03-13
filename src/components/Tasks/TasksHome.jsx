@@ -1,9 +1,10 @@
 import "./tasksHome.scss";
-import { Col, Row, Form, Button } from "react-bootstrap";
+import { Col, Row, Form } from "react-bootstrap";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { SingleTask } from "./SingleTask";
 
-export const TasksHome = () => {
+export const TasksHome = (props) => {
   const dispatch = useDispatch();
   const [input, setInput] = useState("");
   const todoList = useSelector((state) => state.todo);
@@ -39,12 +40,11 @@ export const TasksHome = () => {
       <Row className="mt-3">
         <Col className="col col-12 col-md-4">
           <p className="titleTasks">To do</p>
-          <div className="bgAllDiv">
-            {todoList &&
-              todoList.map((el) => {
-                return <p className="mt-3">{el}</p>;
-              })}
-          </div>
+
+          {todoList &&
+            todoList.map((el, i) => {
+              return <SingleTask text={el} key={i} />;
+            })}
         </Col>
         <Col className="col col-12 col-md-4">
           <p className="titleTasks">Execution</p>

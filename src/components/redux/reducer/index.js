@@ -11,6 +11,11 @@ const mainReducer = (state = initialState, action) => {
         ...state,
         todo: [...state.todo, action.payload],
       };
+    case "REMOVE_TODO":
+      return {
+        ...state,
+        todo: state.todo.filter((el) => el !== action.payload),
+      };
     default:
       return state;
   }
