@@ -4,6 +4,7 @@ import { BrowserRouter } from "react-router-dom";
 import "./App.css";
 import { NavbarMobile } from "./components/NavbarMobile/NavbarMobile";
 import { Sidebar } from "./components/Sidebar/Sidebar";
+import { TasksHome } from "./components/Tasks/TasksHome";
 import { Topbar } from "./components/Topbar/Topbar";
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
             </Col>
             <Col>
               <Topbar />
+              <TasksHome />
             </Col>
           </Row>
         </Container>
