@@ -1,6 +1,16 @@
+import {
+  DONE_LIST,
+  EXECUTION_LIST,
+  REMOVE_DONE,
+  REMOVE_EXECUTION,
+  REMOVE_TODO,
+} from "../action";
+
 // Setto stato iniziale
 const initialState = {
   todo: "",
+  execution: "",
+  done: "",
 };
 
 // Creo funzione reducer che legge le azioni(dispatch)
@@ -11,10 +21,30 @@ const mainReducer = (state = initialState, action) => {
         ...state,
         todo: [...state.todo, action.payload],
       };
-    case "REMOVE_TODO":
+    case REMOVE_TODO:
       return {
         ...state,
         todo: state.todo.filter((el) => el !== action.payload),
+      };
+    case EXECUTION_LIST:
+      return {
+        ...state,
+        execution: [...state.execution, action.payload],
+      };
+    case REMOVE_EXECUTION:
+      return {
+        ...state,
+        execution: state.execution.filter((el) => el !== action.payload),
+      };
+    case DONE_LIST:
+      return {
+        ...state,
+        done: [...state.done, action.payload],
+      };
+    case REMOVE_DONE:
+      return {
+        ...state,
+        done: state.done.filter((el) => el !== action.payload),
       };
     default:
       return state;
