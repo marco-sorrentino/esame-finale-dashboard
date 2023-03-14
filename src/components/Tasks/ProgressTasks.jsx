@@ -23,7 +23,7 @@ export const ProgressTasks = (props) => {
           className="mt-3 bgAllDiv barProgress"
           variant="success"
           now={props.numberDone}
-          label={`${props.numberDone}%`}
+          label={`${props.numberDone}`}
           visuallyHidden
         />
       </Col>

@@ -86,7 +86,9 @@ export const TasksHome = (props) => {
         </Col>
       </Row>
       <Row className="mt-3 ">
-        {todoList.length === 0 ? (
+        {todoList.length === 0 &&
+        execution.length === 0 &&
+        done.length === 0 ? (
           <></>
         ) : (
           <ProgressTasks
