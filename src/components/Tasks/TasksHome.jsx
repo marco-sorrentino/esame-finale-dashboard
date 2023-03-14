@@ -1,9 +1,8 @@
 import "./tasksHome.scss";
-import { Col, Row, Form, Modal, Button, Container } from "react-bootstrap";
+import { Col, Row, Form } from "react-bootstrap";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { SingleTask } from "./SingleTask";
-import ProgressBar from "react-bootstrap/ProgressBar";
 import { ProgressTasks } from "./ProgressTasks";
 
 export const TasksHome = (props) => {
@@ -13,8 +12,6 @@ export const TasksHome = (props) => {
   const execution = useSelector((state) => state.execution);
   const done = useSelector((state) => state.done);
   const [show, setShow] = useState(false);
-  const executionBar = todoList.length / execution.length;
-  console.log(executionBar);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -30,7 +27,7 @@ export const TasksHome = (props) => {
   };
 
   return (
-    <div>
+    <div className="divTasksHome">
       <Row className="mt-3 d-flex align-items-center">
         <Col md={4}>
           <Form onSubmit={handleSubmit}>
@@ -67,7 +64,7 @@ export const TasksHome = (props) => {
               return <SingleTask text={el} key={i} />;
             })}
         </Col>
-        <Col className="col col-12 col-md-4">
+        <Col className="col col-12 col-md-4 mt-3 mt-md-0">
           <div className="d-flex align-items-center">
             <p className="titleTasks">Execution</p>
             <p className="summaryList text-warning">{execution.length}</p>
@@ -77,7 +74,7 @@ export const TasksHome = (props) => {
               return <SingleTask key={i} text={el} />;
             })}
         </Col>
-        <Col className="col col-12 col-md-4">
+        <Col className="col col-12 col-md-4 mt-3 mt-md-0">
           <div className="d-flex align-items-center">
             <p className="titleTasks">Done</p>
             <p className="summaryList text-success">{done.length}</p>
@@ -89,11 +86,15 @@ export const TasksHome = (props) => {
         </Col>
       </Row>
       <Row className="mt-3 ">
-        <ProgressTasks
-          numberTodo={todoList.length * 10}
-          numberExecution={execution.length * 10}
-          numberDone={done.length * 10}
-        />
+        {todoList.length === 0 ? (
+          <></>
+        ) : (
+          <ProgressTasks
+            numberTodo={todoList.length * 10}
+            numberExecution={execution.length * 10}
+            numberDone={done.length * 10}
+          />
+        )}
       </Row>
     </div>
   );

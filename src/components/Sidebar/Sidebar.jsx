@@ -1,5 +1,5 @@
 import "./sidebar.scss";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import logo from "../../assets/images/LOGO.svg";
 import { AiFillHome } from "react-icons/ai";
 import { BsFillCalendarRangeFill } from "react-icons/bs";

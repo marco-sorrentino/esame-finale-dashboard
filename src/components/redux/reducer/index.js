@@ -6,14 +6,12 @@ import {
   REMOVE_TODO,
 } from "../action";
 
-// Setto stato iniziale
 const initialState = {
   todo: "",
   execution: "",
   done: "",
 };
 
-// Creo funzione reducer che legge le azioni(dispatch)
 const mainReducer = (state = initialState, action) => {
   switch (action.type) {
     case "SAVE_TODO":
