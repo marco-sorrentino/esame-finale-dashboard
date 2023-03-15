@@ -12,6 +12,7 @@ import {
   removeExecutionAction,
   removeTodoAction,
 } from "../redux/action";
+import DropdownItem from "react-bootstrap/esm/DropdownItem";
 
 export const SingleTask = (props) => {
   const dispatch = useDispatch();
@@ -25,7 +26,6 @@ export const SingleTask = (props) => {
         title={<SlOptions className="iconOptionTodo" />}
       >
         <Dropdown.Item
-          href="#/action-1"
           className="d-flex align-items-center fw-bold"
           onClick={() => {
             dispatch(removeTodoAction(props));
@@ -38,8 +38,8 @@ export const SingleTask = (props) => {
         <Dropdown.Item
           className="d-flex align-items-center fw-bold"
           onClick={() => {
-            dispatch(executionListAction(props));
             dispatch(removeTodoAction(props));
+            dispatch(executionListAction(props));
           }}
         >
           <AiOutlineLoading3Quarters className="me-2 text-warning" /> Execution
@@ -49,6 +49,7 @@ export const SingleTask = (props) => {
           onClick={() => {
             dispatch(doneListAction(props));
             dispatch(removeExecutionAction(props));
+            dispatch(removeTodoAction(props));
           }}
         >
           <MdOutlineDone className="me-2 text-success" /> Done

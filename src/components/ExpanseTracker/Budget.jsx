@@ -81,7 +81,9 @@ export const Budget = (props) => {
                 return el?.cost > 0 ? (
                   <div key={i}>
                     <SingleItemBudget
-                      text={el?.text}
+                      text={
+                        el?.text.charAt(0).toUpperCase() + el?.text.slice(1)
+                      }
                       cost={el?.cost}
                       obj={el}
                     />
@@ -98,7 +100,9 @@ export const Budget = (props) => {
                 return el?.cost < 0 ? (
                   <div key={i}>
                     <SingleItemBudget
-                      text={el?.text}
+                      text={
+                        el?.text.charAt(0).toUpperCase() + el?.text.slice(1)
+                      }
                       cost={el?.cost}
                       obj={el}
                     />
