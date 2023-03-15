@@ -5,18 +5,31 @@ import { useDispatch } from "react-redux";
 import { GET_BUDGET } from "../redux/action";
 import "./expanseTrackerHome.scss";
 
-export const Budget = () => {
-  const [tracker, setTracker] = useState("" || Number);
+export const Budget = (props) => {
+  const [tracker, setTracker] = useState("");
   const dispatch = useDispatch();
   const seeBudgetList = useSelector((state) => state.dashboard.planner);
+  let spesa = seeBudgetList.reduce((accum, obj) => accum + obj.cost, 0);
 
   /*   const handleSubmit = (e) => {
-    e.prevent.default();
+    e.preventDefault();
     dispatch({
       type: "GET_COST",
       payload: tracker,
     });
   }; */
+
+  const handleClick = () => {
+    tracker === "" ? (
+      <></>
+    ) : (
+      dispatch({
+        type: GET_BUDGET,
+        payload: tracker,
+      })
+    );
+    window.location.reload();
+  };
 
   return (
     <>
@@ -24,7 +37,12 @@ export const Budget = () => {
         <Row className="">
           <Col xs={12} md={4} className=" justify-content-center py-2">
             <p className="titleExpanse  ps-3 ">Balance</p>
-            <p className="ps-3  py-2">0 €</p>
+            {spesa > 0 ? (
+              <p className="ps-3 text-success fs-4 fw-bold py-3">{spesa} €</p>
+            ) : (
+              <p className="ps-3 text-danger fs-4 fw-bold py-3">{spesa} €</p>
+            )}
+
             <Form className="px-3" /* onSubmit={handleSubmit} */>
               <Form.Control
                 placeholder="Write here"
@@ -49,28 +67,20 @@ export const Budget = () => {
                   }));
                 }}
               />
-              <Button
-                className="mt-2 ctaBudget"
-                onClick={() =>
-                  dispatch({
-                    type: GET_BUDGET,
-                    payload: tracker,
-                  })
-                }
-              >
+              <Button className="mt-2 ctaBudget" onClick={handleClick}>
                 Submit
               </Button>
             </Form>
           </Col>
 
-          <Col xs={12} md={4} className="py-2">
-            <p className="titleExpanse ps-2">Come in</p>
+          <Col xs={12} md={4} className="py-2 comeinCol">
+            <p className="titleExpanse ps-3 ps-md-2">Come in</p>
             {seeBudgetList &&
               seeBudgetList.map((el, i) => {
-                return el.cost > 0 ? (
+                return el?.cost > 0 ? (
                   <ListGroup
                     key={i}
-                    className="border-none py-1 px-2 hoverListGroup"
+                    className="border-none py-1 px-3 px-md-2 hoverListGroup"
                   >
                     <ListGroup.Item
                       as="li"
@@ -78,7 +88,7 @@ export const Budget = () => {
                     >
                       <p>{el.text}</p>
                       <Badge bg="success" pill>
-                        {el.cost}
+                        {el?.cost}
                       </Badge>
                     </ListGroup.Item>
                   </ListGroup>
@@ -87,19 +97,19 @@ export const Budget = () => {
                 );
               })}
           </Col>
-          <Col xs={12} md={4} className="py-2">
-            <p className="titleExpanse ps-2">Outputs</p>
+          <Col xs={12} md={4} className="py-2 comeinCol">
+            <p className="titleExpanse ps-3 ps-md-2">Outputs</p>
             {seeBudgetList &&
               seeBudgetList.map((el, i) => {
-                return el.cost < 0 ? (
-                  <ListGroup key={i} className="border-none py-1 px-2">
+                return el?.cost < 0 ? (
+                  <ListGroup key={i} className="border-none py-1 px-3 px-md-2">
                     <ListGroup.Item
                       as="li"
                       className="d-flex justify-content-between align-items-start border-0 p-0"
                     >
                       <p>{el.text}</p>
                       <Badge bg="danger" pill>
-                        {el.cost.toString().substring(1)}
+                        {el?.cost.toString().substring(1)}
                       </Badge>
                     </ListGroup.Item>
                   </ListGroup>
