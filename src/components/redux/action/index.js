@@ -4,6 +4,7 @@ export const EXECUTION_LIST = "EXECUTION_LIST";
 export const REMOVE_EXECUTION = "REMOVE_EXECUTION";
 export const DONE_LIST = "DONE_LIST";
 export const REMOVE_DONE = "REMOVE_DONE";
+export const GET_BUDGET = "GET_BUDGET";
 
 //Funzione per salvare cià che digito in input in stato globale
 
