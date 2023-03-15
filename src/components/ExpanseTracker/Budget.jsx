@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { GET_BUDGET } from "../redux/action";
 import "./expanseTrackerHome.scss";
+import { SingleItemBudget } from "./SingleItemBudget";
 
 export const Budget = (props) => {
   const [tracker, setTracker] = useState("");
@@ -78,7 +79,7 @@ export const Budget = (props) => {
             {seeBudgetList &&
               seeBudgetList.map((el, i) => {
                 return el?.cost > 0 ? (
-                  <ListGroup
+                  /*                   <ListGroup
                     key={i}
                     className="border-none py-1 px-3 px-md-2 hoverListGroup"
                   >
@@ -91,7 +92,13 @@ export const Budget = (props) => {
                         {el?.cost}
                       </Badge>
                     </ListGroup.Item>
-                  </ListGroup>
+                  </ListGroup> */
+                  <SingleItemBudget
+                    color={"#198753"}
+                    text={el?.text}
+                    cost={el?.cost}
+                    index={i}
+                  />
                 ) : (
                   <></>
                 );
@@ -102,17 +109,12 @@ export const Budget = (props) => {
             {seeBudgetList &&
               seeBudgetList.map((el, i) => {
                 return el?.cost < 0 ? (
-                  <ListGroup key={i} className="border-none py-1 px-3 px-md-2">
-                    <ListGroup.Item
-                      as="li"
-                      className="d-flex justify-content-between align-items-start border-0 p-0"
-                    >
-                      <p>{el.text}</p>
-                      <Badge bg="danger" pill>
-                        {el?.cost.toString().substring(1)}
-                      </Badge>
-                    </ListGroup.Item>
-                  </ListGroup>
+                  <SingleItemBudget
+                    color={"#198753"}
+                    text={el?.text}
+                    cost={el?.cost}
+                    index={i}
+                  />
                 ) : (
                   <></>
                 );
