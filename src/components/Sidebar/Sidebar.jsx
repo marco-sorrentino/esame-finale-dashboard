@@ -8,6 +8,7 @@ import { FaCashRegister } from "react-icons/fa";
 import { AiFillDollarCircle } from "react-icons/ai";
 import { BiNews } from "react-icons/bi";
 import { BsFillCloudSunFill } from "react-icons/bs";
+import { Link } from "react-router-dom";
 
 export const Sidebar = () => {
   return (
@@ -34,7 +35,9 @@ export const Sidebar = () => {
         </div>
         <div className="bg-menu p-3">
           <FaCashRegister className=" iconSideBar" />
-          <p className="text-sidebar ms-2">Expanse Tracker</p>
+          <Link className="text-decoration-none" to={"/expanse-tracker"}>
+            <p className="text-sidebar ms-2">Expanse Tracker</p>
+          </Link>
         </div>
         <div className="bg-menu p-3">
           <AiFillDollarCircle className="iconSideBar" />

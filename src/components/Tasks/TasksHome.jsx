@@ -8,9 +8,9 @@ import { ProgressTasks } from "./ProgressTasks";
 export const TasksHome = (props) => {
   const dispatch = useDispatch();
   const [input, setInput] = useState("");
-  const todoList = useSelector((state) => state.todo);
-  const execution = useSelector((state) => state.execution);
-  const done = useSelector((state) => state.done);
+  const todoList = useSelector((state) => state.dashboard.todo);
+  const execution = useSelector((state) => state.dashboard.execution);
+  const done = useSelector((state) => state.dashboard.done);
   const [show, setShow] = useState(false);
 
   const handleSubmit = (e) => {
