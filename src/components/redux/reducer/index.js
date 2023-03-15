@@ -2,6 +2,7 @@ import {
   DONE_LIST,
   EXECUTION_LIST,
   GET_BUDGET,
+  REMOVE_BUDGET,
   REMOVE_DONE,
   REMOVE_EXECUTION,
   REMOVE_TODO,
@@ -50,6 +51,11 @@ const mainReducer = (state = initialState, action) => {
       return {
         ...state,
         planner: [...state.planner, action.payload],
+      };
+    case REMOVE_BUDGET:
+      return {
+        ...state,
+        planner: state.planner.filter((el) => el !== action.payload),
       };
     default:
       return state;

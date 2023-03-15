@@ -1,6 +1,10 @@
-import { Badge, ListGroup } from "react-bootstrap";
+import { Dropdown, ListGroup } from "react-bootstrap";
+import { AiFillDelete } from "react-icons/ai";
+import { useDispatch } from "react-redux";
+import { removeBudgetAction } from "../redux/action";
 
 export const SingleItemBudget = (props) => {
+  const dispatch = useDispatch();
   return (
     <ListGroup
       key={props.index}
@@ -12,14 +16,50 @@ export const SingleItemBudget = (props) => {
       >
         <p>{props.text}</p>
 
-        {props.cost > 0 ? (
-          <Badge bg="success" pill>
-            {props.cost}
-          </Badge>
+        {props?.cost > 0 ? (
+          <Dropdown>
+            <Dropdown.Toggle
+              className="px-2 py-0 fw-bold rounded-pill"
+              variant="success"
+              id="dropdown-basic"
+              style={{ fontSize: "12px" }}
+            >
+              {props?.cost}
+            </Dropdown.Toggle>
+
+            <Dropdown.Menu>
+              <Dropdown.Item
+                onClick={() => {
+                  dispatch(removeBudgetAction(props));
+                }}
+                className="d-flex align-items-center"
+              >
+                <AiFillDelete className="text-danger me-1" /> Remove
+              </Dropdown.Item>
+            </Dropdown.Menu>
+          </Dropdown>
         ) : (
-          <Badge bg="danger" pill>
-            {props.cost}
-          </Badge>
+          <Dropdown>
+            <Dropdown.Toggle
+              className="px-2 py-0 fw-bold rounded-pill"
+              variant="danger"
+              id="dropdown-basic"
+              style={{ fontSize: "12px" }}
+            >
+              {props?.cost}
+            </Dropdown.Toggle>
+
+            <Dropdown.Menu>
+              <Dropdown.Item
+                onClick={() => {
+                  dispatch(removeBudgetAction(props));
+                }}
+                className="d-flex align-items-center"
+              >
+                <AiFillDelete className="text-danger me-1" /> Remove
+              </Dropdown.Item>
+            </Dropdown.Menu>
+          </Dropdown>
         )}
       </ListGroup.Item>
     </ListGroup>

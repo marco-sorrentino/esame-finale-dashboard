@@ -5,8 +5,7 @@ export const REMOVE_EXECUTION = "REMOVE_EXECUTION";
 export const DONE_LIST = "DONE_LIST";
 export const REMOVE_DONE = "REMOVE_DONE";
 export const GET_BUDGET = "GET_BUDGET";
-
-//Funzione per salvare cià che digito in input in stato globale
+export const REMOVE_BUDGET = "REMOVE_BUDGET";
 
 //Funzione dispatch x rimuovere dalla lita to do
 
@@ -50,5 +49,12 @@ export const removeDoneAction = (props) => {
   return {
     type: REMOVE_DONE,
     payload: props.text,
+  };
+};
+
+export const removeBudgetAction = (props) => {
+  return {
+    type: REMOVE_BUDGET,
+    payload: props.obj,
   };
 };
