@@ -7,11 +7,12 @@ import listPlugin from "@fullcalendar/list";
 import { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
+import { Form } from "react-bootstrap";
 
 export const CalendarHome = () => {
   const [currentEvent, setCurrentEvent] = useState([]);
   const [show, setShow] = useState(false);
-  console.log(currentEvent);
+
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
@@ -20,6 +21,7 @@ export const CalendarHome = () => {
     const title = prompt("please enter date");
     const calendarApi = selected.view.calendar;
     calendarApi.unselect();
+    console.log(calendarApi);
     if (title) {
       calendarApi.addEvent({
         id: `${selected.dateStr} - ${title}`,
@@ -47,7 +49,20 @@ export const CalendarHome = () => {
         <Modal.Header closeButton>
           <Modal.Title>Modal heading</Modal.Title>
         </Modal.Header>
-        <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
+        <Modal.Body>
+          <Form className="px-3" /* onSubmit={handleSubmit} */>
+            <Form.Control
+              placeholder="Write here"
+              className="inputBudget"
+              name="tracker"
+              onChange={(e) => {
+                setCurrentEvent(e.target.value);
+              }}
+              /* value={input}
+              onChange={(e) => setInput(e.target.value)} */
+            />
+          </Form>
+        </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
             Close
