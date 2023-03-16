@@ -27,15 +27,19 @@ export const Sidebar = () => {
         </div>
         <div className="bg-menu p-3">
           <BsFillCalendarRangeFill className=" iconSideBar" />
-          <p className="text-sidebar ms-2">Calendar</p>
+          <Link className="noDecoration" to={"/calendar"}>
+            <p className="text-sidebar ms-2">Calendar</p>
+          </Link>
         </div>
         <div className="bg-menu p-3">
           <FaTasks className=" iconSideBar" />
-          <p className="text-sidebar ms-2 ">Tasks</p>
+          <Link className="noDecoration" to={"/tasks"}>
+            <p className="text-sidebar ms-2 ">Tasks</p>
+          </Link>
         </div>
         <div className="bg-menu p-3">
           <FaCashRegister className=" iconSideBar" />
-          <Link className="text-decoration-none" to={"/expanse-tracker"}>
+          <Link className="noDecoration" to={"/expanse-tracker"}>
             <p className="text-sidebar ms-2">Expanse Tracker</p>
           </Link>
         </div>

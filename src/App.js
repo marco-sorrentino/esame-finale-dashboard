@@ -2,6 +2,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Col, Container, Row } from "react-bootstrap";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
+import { CalendarHome } from "./components/CalendarHomepage/CalendarHome";
 import { ExpanseTrackerHome } from "./components/ExpanseTracker/ExpanseTrackerHome";
 import { NavbarMobile } from "./components/NavbarMobile/NavbarMobile";
 import { Sidebar } from "./components/Sidebar/Sidebar";
@@ -21,11 +22,12 @@ function App() {
             <Col>
               <Topbar />
               <Routes>
-                <Route path="/" element={<TasksHome />} />
+                <Route path="/tasks" element={<TasksHome />} />
                 <Route
                   path="/expanse-tracker"
                   element={<ExpanseTrackerHome />}
                 />
+                <Route path="/calendar" element={<CalendarHome />} />
               </Routes>
             </Col>
           </Row>

@@ -14,7 +14,7 @@ export const ChartCake = (props) => {
       {sumPlus === 0 && sumMoin === 0 ? (
         <></>
       ) : (
-        <div className="bgAllDiv mt-3 d-flex flex-column justify-content-center align-items-center">
+        <div className="bgAllDiv box mt-3 d-flex flex-column justify-content-center align-items-center">
           <div className="d-flex py-2">
             <p className="text-success fs-5 me-5 fw-bold">{sumPlus}</p>
             <p className="text-danger fs-5 ms-5 fw-bold">{sumMoin}</p>

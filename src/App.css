@@ -18,6 +18,10 @@ hr {
   color: #24ca65;
 }
 
+.noDecoration {
+  text-decoration: none;
+}
+
 .greenBg {
   background-color: #24ca65;
   border: none;
@@ -27,4 +31,8 @@ hr {
   background-color: white;
   box-shadow: 0px 0px 47px rgba(0, 0, 0, 0.05);
   border-radius: 10px;
+}
+
+.box {
+  height: 350px;
 }
