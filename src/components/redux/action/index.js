@@ -10,6 +10,8 @@ export const GET_HEADING_NEWS = "GET_HEADING_NEWS";
 export const GET_BUSINESS_NEWS = "GET_BUSINESS_NEWS";
 export const GET_TECHNOLOGY_NEWS = "GET_TECHNOLOGY_NEWS";
 export const GET_SPORT_NEWS = "GET_SPORT_NEWS";
+export const READ_LATER = "READ_LATER";
+export const REMOVE_READ = "REMOVE_READ";
 
 //Funzione dispatch x rimuovere dalla lita to do
 

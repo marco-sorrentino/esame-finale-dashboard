@@ -7,6 +7,7 @@ import { ExpanseTrackerHome } from "./components/ExpanseTracker/ExpanseTrackerHo
 import { NavbarMobile } from "./components/NavbarMobile/NavbarMobile";
 import { BusinessNewsList } from "./components/News/BusinessNewsList";
 import { NewsHomePage } from "./components/News/NewsHomePage";
+import { ReadLaterNews } from "./components/News/ReadLaterNews";
 import { SportNewsList } from "./components/News/SportNewsList";
 import { TechnologyNewsList } from "./components/News/TechnologyNewsList";
 import { Sidebar } from "./components/Sidebar/Sidebar";
@@ -39,6 +40,7 @@ function App() {
                   element={<TechnologyNewsList />}
                 />
                 <Route path="/sport-news" element={<SportNewsList />} />
+                <Route path="/read-later-news" element={<ReadLaterNews />} />
               </Routes>
             </Col>
           </Row>

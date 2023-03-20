@@ -32,6 +32,7 @@ export const HeadingNewsList = (props) => {
                   url={el.url}
                   content={el.content}
                   publishedAt={el.publishedAt}
+                  obj={el}
                 />
               );
             })}

@@ -6,9 +6,11 @@ import {
   GET_HEADING_NEWS,
   GET_SPORT_NEWS,
   GET_TECHNOLOGY_NEWS,
+  READ_LATER,
   REMOVE_BUDGET,
   REMOVE_DONE,
   REMOVE_EXECUTION,
+  REMOVE_READ,
   REMOVE_TODO,
 } from "../action";
 
@@ -21,6 +23,7 @@ const initialState = {
   businessNews: [],
   technologyNews: [],
   sportNews: [],
+  readLaterNews: [],
 };
 
 const mainReducer = (state = initialState, action) => {
@@ -84,6 +87,18 @@ const mainReducer = (state = initialState, action) => {
       return {
         ...state,
         sportNews: action.payload,
+      };
+    case READ_LATER:
+      return {
+        ...state,
+        readLaterNews: [...state.readLaterNews, action.payload],
+      };
+    case REMOVE_READ:
+      return {
+        ...state,
+        readLaterNews: state.readLaterNews.filter(
+          (el) => el !== action.payload
+        ),
       };
     default:
       return state;
