@@ -12,7 +12,7 @@ export const SportNewsList = () => {
   useEffect(() => {
     dispatch(getSportAction());
   }, []);
-  console.log(seeSport);
+
   return (
     <>
       <div className="mt-3">

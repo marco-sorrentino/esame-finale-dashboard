@@ -46,7 +46,7 @@ export const SingleNews = (props) => {
                     payload: props.obj,
                   });
                 }}
-                className="text-warning ms-2 fs-6"
+                className="text-warning ms-2 fs-5"
               />
             </div>
           </div>

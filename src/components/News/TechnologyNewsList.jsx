@@ -14,8 +14,6 @@ export const TechnologyNewsList = () => {
     dispatch(getTechnologyAction());
   }, []);
 
-  console.log(seeTecnology);
-
   return (
     <>
       <div className="mt-3">
