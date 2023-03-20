@@ -12,7 +12,6 @@ import { Form } from "react-bootstrap";
 export const CalendarHome = () => {
   const [currentEvent, setCurrentEvent] = useState([]);
   const [show, setShow] = useState(false);
-
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 

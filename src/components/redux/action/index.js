@@ -6,6 +6,8 @@ export const DONE_LIST = "DONE_LIST";
 export const REMOVE_DONE = "REMOVE_DONE";
 export const GET_BUDGET = "GET_BUDGET";
 export const REMOVE_BUDGET = "REMOVE_BUDGET";
+export const GET_HEADING_NEWS = "GET_HEADING_NEWS";
+export const GET_BUSINESS_NEWS = "GET_BUSINESS_NEWS";
 
 //Funzione dispatch x rimuovere dalla lita to do
 
@@ -56,5 +58,49 @@ export const removeBudgetAction = (props) => {
   return {
     type: REMOVE_BUDGET,
     payload: props.obj,
+  };
+};
+
+// Fetch x heading news
+
+export const getHeadingNewsAction = () => {
+  return async (dispatch, getState) => {
+    try {
+      let res = await fetch(
+        "https://newsapi.org/v2/top-headlines?country=us&apiKey=3724d36173164eed9500c3821dbaf22d"
+      );
+      if (res.ok) {
+        let data = await res.json();
+        let headingNews = data.articles;
+        dispatch({
+          type: GET_HEADING_NEWS,
+          payload: headingNews,
+        });
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+};
+
+// Fetch x business news
+
+export const getBusinessNewsAction = () => {
+  return async (dispatch, getState) => {
+    try {
+      let res = await fetch(
+        "https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=3724d36173164eed9500c3821dbaf22d"
+      );
+      if (res.ok) {
+        let data = await res.json();
+        let businessNews = data.articles;
+        dispatch({
+          type: GET_BUSINESS_NEWS,
+          payload: businessNews,
+        });
+      }
+    } catch (error) {
+      console.log(error);
+    }
   };
 };

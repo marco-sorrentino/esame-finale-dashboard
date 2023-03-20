@@ -5,6 +5,8 @@ import "./App.css";
 import { CalendarHome } from "./components/CalendarHomepage/CalendarHome";
 import { ExpanseTrackerHome } from "./components/ExpanseTracker/ExpanseTrackerHome";
 import { NavbarMobile } from "./components/NavbarMobile/NavbarMobile";
+import { BusinessNewsList } from "./components/News/BusinessNewsList";
+import { NewsHomePage } from "./components/News/NewsHomePage";
 import { Sidebar } from "./components/Sidebar/Sidebar";
 import { TasksHome } from "./components/Tasks/TasksHome";
 import { Topbar } from "./components/Topbar/Topbar";
@@ -19,7 +21,7 @@ function App() {
               <NavbarMobile />
               <Sidebar />
             </Col>
-            <Col>
+            <Col md={9}>
               <Topbar />
               <Routes>
                 <Route path="/tasks" element={<TasksHome />} />
@@ -28,6 +30,8 @@ function App() {
                   element={<ExpanseTrackerHome />}
                 />
                 <Route path="/calendar" element={<CalendarHome />} />
+                <Route path="/heading-news" element={<NewsHomePage />} />
+                <Route path="/business-news" element={<BusinessNewsList />} />
               </Routes>
             </Col>
           </Row>

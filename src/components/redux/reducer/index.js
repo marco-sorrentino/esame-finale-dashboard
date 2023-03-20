@@ -2,6 +2,8 @@ import {
   DONE_LIST,
   EXECUTION_LIST,
   GET_BUDGET,
+  GET_BUSINESS_NEWS,
+  GET_HEADING_NEWS,
   REMOVE_BUDGET,
   REMOVE_DONE,
   REMOVE_EXECUTION,
@@ -13,6 +15,8 @@ const initialState = {
   execution: "",
   done: "",
   planner: [],
+  headingNews: [],
+  businessNews: [],
 };
 
 const mainReducer = (state = initialState, action) => {
@@ -56,6 +60,16 @@ const mainReducer = (state = initialState, action) => {
       return {
         ...state,
         planner: state.planner.filter((el) => el !== action.payload),
+      };
+    case GET_HEADING_NEWS:
+      return {
+        ...state,
+        headingNews: action.payload,
+      };
+    case GET_BUSINESS_NEWS:
+      return {
+        ...state,
+        businessNews: action.payload,
       };
     default:
       return state;
