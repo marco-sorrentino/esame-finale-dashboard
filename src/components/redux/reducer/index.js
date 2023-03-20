@@ -4,6 +4,8 @@ import {
   GET_BUDGET,
   GET_BUSINESS_NEWS,
   GET_HEADING_NEWS,
+  GET_SPORT_NEWS,
+  GET_TECHNOLOGY_NEWS,
   REMOVE_BUDGET,
   REMOVE_DONE,
   REMOVE_EXECUTION,
@@ -17,6 +19,8 @@ const initialState = {
   planner: [],
   headingNews: [],
   businessNews: [],
+  technologyNews: [],
+  sportNews: [],
 };
 
 const mainReducer = (state = initialState, action) => {
@@ -70,6 +74,16 @@ const mainReducer = (state = initialState, action) => {
       return {
         ...state,
         businessNews: action.payload,
+      };
+    case GET_TECHNOLOGY_NEWS:
+      return {
+        ...state,
+        technologyNews: action.payload,
+      };
+    case GET_SPORT_NEWS:
+      return {
+        ...state,
+        sportNews: action.payload,
       };
     default:
       return state;

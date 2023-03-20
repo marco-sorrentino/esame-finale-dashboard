@@ -2,30 +2,29 @@ import { useEffect } from "react";
 import { Row } from "react-bootstrap";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
-import { getBusinessNewsAction } from "../redux/action";
+import { getSportAction } from "../redux/action";
 import { FilterMenu } from "./FilterMenu";
 import { SingleNews } from "./SingleNews";
 
-export const BusinessNewsList = () => {
+export const SportNewsList = () => {
   const dispatch = useDispatch();
-  const seeBusiness = useSelector((state) => state.dashboard.businessNews);
-
+  const seeSport = useSelector((state) => state.dashboard.sportNews);
   useEffect(() => {
-    dispatch(getBusinessNewsAction());
+    dispatch(getSportAction());
   }, []);
-
+  console.log(seeSport);
   return (
     <>
       <div className="mt-3">
         <Row className="d-flex">
-          <p className="titleTasks">Business news</p>
+          <p className="titleTasks">Sport news</p>
         </Row>
       </div>
       <FilterMenu />
       <div>
         <Row>
-          {seeBusiness &&
-            seeBusiness.map((el, i) => {
+          {seeSport &&
+            seeSport.map((el, i) => {
               return (
                 <SingleNews
                   key={i}

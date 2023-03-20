@@ -1,31 +1,33 @@
 import { useEffect } from "react";
 import { Row } from "react-bootstrap";
-import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
-import { getBusinessNewsAction } from "../redux/action";
+import { useSelector } from "react-redux";
+import { getTechnologyAction } from "../redux/action";
 import { FilterMenu } from "./FilterMenu";
 import { SingleNews } from "./SingleNews";
 
-export const BusinessNewsList = () => {
+export const TechnologyNewsList = () => {
   const dispatch = useDispatch();
-  const seeBusiness = useSelector((state) => state.dashboard.businessNews);
+  const seeTecnology = useSelector((state) => state.dashboard.technologyNews);
 
   useEffect(() => {
-    dispatch(getBusinessNewsAction());
+    dispatch(getTechnologyAction());
   }, []);
+
+  console.log(seeTecnology);
 
   return (
     <>
       <div className="mt-3">
         <Row className="d-flex">
-          <p className="titleTasks">Business news</p>
+          <p className="titleTasks">Technology news</p>
         </Row>
       </div>
       <FilterMenu />
       <div>
         <Row>
-          {seeBusiness &&
-            seeBusiness.map((el, i) => {
+          {seeTecnology &&
+            seeTecnology.map((el, i) => {
               return (
                 <SingleNews
                   key={i}

@@ -7,6 +7,8 @@ import { ExpanseTrackerHome } from "./components/ExpanseTracker/ExpanseTrackerHo
 import { NavbarMobile } from "./components/NavbarMobile/NavbarMobile";
 import { BusinessNewsList } from "./components/News/BusinessNewsList";
 import { NewsHomePage } from "./components/News/NewsHomePage";
+import { SportNewsList } from "./components/News/SportNewsList";
+import { TechnologyNewsList } from "./components/News/TechnologyNewsList";
 import { Sidebar } from "./components/Sidebar/Sidebar";
 import { TasksHome } from "./components/Tasks/TasksHome";
 import { Topbar } from "./components/Topbar/Topbar";
@@ -32,6 +34,11 @@ function App() {
                 <Route path="/calendar" element={<CalendarHome />} />
                 <Route path="/heading-news" element={<NewsHomePage />} />
                 <Route path="/business-news" element={<BusinessNewsList />} />
+                <Route
+                  path="/technology-news"
+                  element={<TechnologyNewsList />}
+                />
+                <Route path="/sport-news" element={<SportNewsList />} />
               </Routes>
             </Col>
           </Row>

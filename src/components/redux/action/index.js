@@ -8,6 +8,8 @@ export const GET_BUDGET = "GET_BUDGET";
 export const REMOVE_BUDGET = "REMOVE_BUDGET";
 export const GET_HEADING_NEWS = "GET_HEADING_NEWS";
 export const GET_BUSINESS_NEWS = "GET_BUSINESS_NEWS";
+export const GET_TECHNOLOGY_NEWS = "GET_TECHNOLOGY_NEWS";
+export const GET_SPORT_NEWS = "GET_SPORT_NEWS";
 
 //Funzione dispatch x rimuovere dalla lita to do
 
@@ -97,6 +99,50 @@ export const getBusinessNewsAction = () => {
         dispatch({
           type: GET_BUSINESS_NEWS,
           payload: businessNews,
+        });
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+};
+
+// Fetch per technology news
+
+export const getTechnologyAction = () => {
+  return async (dispatch, getState) => {
+    try {
+      let res = await fetch(
+        "https://newsapi.org/v2/top-headlines?country=us&category=technology&pageSize=8&apiKey=3724d36173164eed9500c3821dbaf22d"
+      );
+      if (res.ok) {
+        let data = await res.json();
+        let technologyNews = data.articles;
+        dispatch({
+          type: GET_TECHNOLOGY_NEWS,
+          payload: technologyNews,
+        });
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+};
+
+// Fetch per sport news
+
+export const getSportAction = () => {
+  return async (dispatch, getState) => {
+    try {
+      let res = await fetch(
+        "https://newsapi.org/v2/top-headlines?country=us&category=sports&apiKey=3724d36173164eed9500c3821dbaf22d"
+      );
+      if (res.ok) {
+        let data = await res.json();
+        let sportNews = data.articles;
+        dispatch({
+          type: GET_SPORT_NEWS,
+          payload: sportNews,
         });
       }
     } catch (error) {
