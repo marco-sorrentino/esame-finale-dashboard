@@ -46,7 +46,7 @@ export const SingleNews = (props) => {
                     payload: props.obj,
                   });
                 }}
-                className="text-warning ms-2 fs-5"
+                className="text-warning ms-2  starIcon"
               />
             </div>
           </div>

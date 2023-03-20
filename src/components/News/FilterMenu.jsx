@@ -45,7 +45,7 @@ export const FilterMenu = () => {
             className="ctaBudget filter ms-3"
           >
             Read later{" "}
-            <Badge className="bg-warning text-dark">{seeRead.length}</Badge>
+            <Badge className="bg-warning text-dark ">{seeRead.length}</Badge>
           </Button>
         </div>
       </Row>

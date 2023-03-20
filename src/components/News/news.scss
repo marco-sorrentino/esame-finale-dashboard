@@ -56,3 +56,13 @@
     flex-direction: column !important;
   }
 }
+
+.starIcon {
+  font-size: 1.2em;
+  transition: all 0.2s ease-in-out;
+  &:hover {
+    font-size: 1.5em;
+    cursor: pointer;
+    color: rgb(0, 20, 239) !important;
+  }
+}
