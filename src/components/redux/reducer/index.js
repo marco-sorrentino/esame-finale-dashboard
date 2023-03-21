@@ -25,6 +25,7 @@ const initialState = {
   sportNews: [],
   readLaterNews: [],
   weather: {},
+  moreWeather: [],
 };
 
 const mainReducer = (state = initialState, action) => {
@@ -105,6 +106,11 @@ const mainReducer = (state = initialState, action) => {
       return {
         ...state,
         weather: action.payload,
+      };
+    case "GET_WEATHER_HOUR":
+      return {
+        ...state,
+        moreWeather: action.payload,
       };
     default:
       return state;
