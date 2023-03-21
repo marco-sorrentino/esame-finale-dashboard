@@ -1,14 +1,14 @@
 import { useEffect, useState } from "react";
-import { Col, Container, FormControl, Row } from "react-bootstrap";
+import { Col, FormControl, Row } from "react-bootstrap";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { getWeatherAction, getWeatherHourAction } from "../redux/action";
 import "./weather.scss";
+import React from "react";
 
 export const WeatherSearch = () => {
   const [city, setCity] = useState("Milan");
   const [inputText, setInputText] = useState("");
-  const [show, setShow] = useState(false);
   const dispatch = useDispatch();
   const weatherCity = useSelector((state) => state.dashboard.weather);
   const hour = useSelector((state) => state.dashboard.moreWeather);
@@ -82,33 +82,6 @@ export const WeatherSearch = () => {
               <p>vento: {weatherCity?.wind?.speed}</p>
               <p>direzione: {weatherCity?.wind?.deg}°</p>
               <p>pressione: {weatherCity?.main?.pressure}</p>
-            </div>
-          </Col>
-
-          {/*    
-              <Humidity umidita={data.main?.humidity} />
-              <Wind vento={data.wind?.speed} />
-              <Pressure pressione={data.main?.pressure} /> */}
-        </Row>
-      </div>
-      <div>
-        <Row>
-          <Col xs={12} md={4}>
-            <div className="bgAllDiv mt-3">
-              {hour.list.map((el) => {
-                return (
-                  <div className="d-flex justify-content-between p-3 align-items-center">
-                    <p>{el.dt_txt.slice(0, -6)}</p>
-                    <img
-                      style={{ width: "2.5em" }}
-                      src={`http://openweathermap.org/img/wn/${el.weather[0].icon}@2x.png`}
-                      alt=""
-                    />
-                    <p className="mx-3">{el.main.temp_max.toFixed()}</p>
-                    <p>{el.main.temp_min.toFixed()}</p>
-                  </div>
-                );
-              })}
             </div>
           </Col>
         </Row>
