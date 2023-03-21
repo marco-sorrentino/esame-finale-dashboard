@@ -10,7 +10,7 @@ export const NewsHomePage = () => {
           <p className="titleTasks">Headlines news</p>
         </Row>
       </div>
-      <div>
+      <div className="boh">
         <HeadingNewsList />
       </div>
     </>
