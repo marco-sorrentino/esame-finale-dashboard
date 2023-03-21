@@ -152,3 +152,28 @@ export const getSportAction = () => {
     }
   };
 };
+
+// Fetch per meteo
+
+export const getWeatherAction = (city) => {
+  return async (dispatch, getState) => {
+    try {
+      const res = await fetch(
+        `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=66b0f4b97869d304b4ea8c90ce1fe4bf&units=metric`
+      );
+
+      if (res.ok) {
+        const data = await res.json();
+        //Salvo dati nello stato inizializzato prima
+        dispatch({
+          type: "GET_CITY",
+          payload: data,
+        });
+      } else {
+        alert("taooo");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+};

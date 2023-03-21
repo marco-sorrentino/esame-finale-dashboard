@@ -13,6 +13,7 @@ import { TechnologyNewsList } from "./components/News/TechnologyNewsList";
 import { Sidebar } from "./components/Sidebar/Sidebar";
 import { TasksHome } from "./components/Tasks/TasksHome";
 import { Topbar } from "./components/Topbar/Topbar";
+import { WeatherHome } from "./components/Weather/WeatherHome";
 
 function App() {
   return (
@@ -41,6 +42,7 @@ function App() {
                 />
                 <Route path="/sport-news" element={<SportNewsList />} />
                 <Route path="/read-later-news" element={<ReadLaterNews />} />
+                <Route path="/weather" element={<WeatherHome />} />
               </Routes>
             </Col>
           </Row>

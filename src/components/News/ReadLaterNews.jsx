@@ -1,5 +1,4 @@
 import { Badge, Col, Row } from "react-bootstrap";
-import { propTypes } from "react-bootstrap/esm/Image";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import { REMOVE_READ } from "../redux/action";

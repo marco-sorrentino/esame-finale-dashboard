@@ -1,5 +1,4 @@
-import { Button, Row } from "react-bootstrap";
-import { useNavigate } from "react-router-dom";
+import { Row } from "react-bootstrap";
 import { HeadingNewsList } from "./HeadingNewsList";
 import "./news.scss";
 
@@ -11,7 +10,6 @@ export const NewsHomePage = () => {
           <p className="titleTasks">Headlines news</p>
         </Row>
       </div>
-
       <div>
         <HeadingNewsList />
       </div>

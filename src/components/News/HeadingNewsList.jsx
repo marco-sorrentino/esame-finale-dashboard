@@ -1,4 +1,4 @@
-import { Button, Row } from "react-bootstrap";
+import { Row } from "react-bootstrap";
 import { SingleNews } from "./SingleNews";
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
@@ -9,7 +9,6 @@ import { FilterMenu } from "./FilterMenu";
 export const HeadingNewsList = (props) => {
   const dispatch = useDispatch();
   const seeHeadingNews = useSelector((state) => state.dashboard.headingNews);
-  console.log(seeHeadingNews);
 
   useEffect(() => {
     dispatch(getHeadingNewsAction());

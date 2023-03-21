@@ -53,10 +53,12 @@ export const Sidebar = () => {
             <p className="text-sidebar ms-2">News</p>
           </div>
         </Link>
-        <div className="bg-menu last-menu p-3">
-          <BsFillCloudSunFill className=" iconSideBar" />
-          <p className="text-sidebar ms-2">Weather</p>
-        </div>
+        <Link to={"/weather"}>
+          <div className="bg-menu last-menu p-3">
+            <BsFillCloudSunFill className=" iconSideBar" />
+            <p className="text-sidebar ms-2">Weather</p>
+          </div>
+        </Link>
       </Container>
     </Container>
   );

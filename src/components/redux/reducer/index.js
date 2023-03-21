@@ -24,6 +24,7 @@ const initialState = {
   technologyNews: [],
   sportNews: [],
   readLaterNews: [],
+  weather: {},
 };
 
 const mainReducer = (state = initialState, action) => {
@@ -99,6 +100,11 @@ const mainReducer = (state = initialState, action) => {
         readLaterNews: state.readLaterNews.filter(
           (el) => el !== action.payload
         ),
+      };
+    case "GET_CITY":
+      return {
+        ...state,
+        weather: action.payload,
       };
     default:
       return state;

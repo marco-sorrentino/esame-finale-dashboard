@@ -33,7 +33,7 @@ export const TasksHome = (props) => {
           <Form onSubmit={handleSubmit}>
             <Form.Control
               placeholder="Write here"
-              id="writeTasks"
+              className="writeTasks"
               name="todo"
               value={input}
               onChange={(e) => setInput(e.target.value)}
