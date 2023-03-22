@@ -52,11 +52,14 @@ export const WeatherSearch = () => {
         </Row>
       </div>
       <div className="mt-3">
-        <Row>
+        <Row className="mobileCities">
           {cities.map((el, i) => {
             return (
               <Col key={i}>
-                <div onClick={() => setCity(el.name)} className="bgAllDiv">
+                <div
+                  onClick={() => setCity(el.name)}
+                  className="bgAllDiv cities"
+                >
                   <img className="imgCity" src={el?.img} alt="" />
                   <div>
                     <p className="text-center py-1 fw-bold">{el.name}</p>

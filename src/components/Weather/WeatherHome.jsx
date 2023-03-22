@@ -3,6 +3,7 @@ import { Chart } from "./Chart";
 import { Forecast } from "./Forecast";
 import { General } from "./General";
 import { Humidity } from "./Humidity";
+import { Temperatures } from "./Temperatures";
 import { WeatherSearch } from "./WeatherSearch";
 import { Wind } from "./Wind";
 
@@ -25,8 +26,10 @@ export const WeatherHome = () => {
           <Wind />
         </Col>
       </Row>
-      <Row>
-        <Col></Col>
+      <Row className="mt-3">
+        <Col>
+          <Temperatures />
+        </Col>
         <Col></Col>
         <Col></Col>
       </Row>

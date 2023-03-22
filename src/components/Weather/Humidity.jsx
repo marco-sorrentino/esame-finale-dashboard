@@ -9,9 +9,17 @@ export const Humidity = () => {
       <div>
         <p className="fw-bold fs-4">{weatherCity?.main.humidity} %</p>
         {weatherCity?.main.humidity < 50 ? (
-          <ProgressBar variant="primary" now={weatherCity?.main.humidity} />
+          <ProgressBar
+            variant="primary"
+            className="barWidth"
+            now={weatherCity?.main.humidity}
+          />
         ) : (
-          <ProgressBar variant="danger" now={weatherCity?.main.humidity} />
+          <ProgressBar
+            variant="danger"
+            className="barWidth"
+            now={weatherCity?.main.humidity}
+          />
         )}
       </div>
       {weatherCity?.main.humidity < 50 ? <p>Low</p> : <p>High</p>}
