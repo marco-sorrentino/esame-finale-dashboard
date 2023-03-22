@@ -3,9 +3,24 @@
 }
 
 .weatherCard {
-  height: 200px;
+  height: 184px;
 }
 
 .cityName {
   color: #7f52ff;
+}
+
+.weatherTitle {
+  font-size: 1.2em;
+  color: #bdbdbd;
+}
+
+.conditionWeather {
+  font-weight: bold;
+}
+
+.prova {
+  width: 100%;
+  overflow-x: scroll;
+  flex-wrap: nowrap;
 }

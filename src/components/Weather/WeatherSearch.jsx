@@ -5,6 +5,7 @@ import { useDispatch } from "react-redux";
 import { getWeatherAction, getWeatherHourAction } from "../redux/action";
 import "./weather.scss";
 import React from "react";
+import { Humidity } from "./Humidity";
 
 export const WeatherSearch = () => {
   const [city, setCity] = useState("Milan");
@@ -66,51 +67,34 @@ export const WeatherSearch = () => {
       <div className="mt-3">
         <Row>
           <Col xs={12} md={4}>
-            <div className="bgAllDiv">
-              {/*               <div>
-                <p className="mt- city">
-                  {weatherCity?.name} , {weatherCity?.main?.temp?.toFixed()} ° C
+            <div className="bgAllDiv p-3 weatherCard">
+              <p className="weatherTitle">General</p>
+              <div className="d-flex align-items-center">
+                <p className="conditionWeather">
+                  {weatherCity.weather[0].description.charAt(0).toUpperCase() +
+                    weatherCity.weather[0].description.slice(1)}
+                </p>
+                <img
+                  src={`http://openweathermap.org/img/wn/${weatherCity.weather[0].icon}@2x.png`}
+                  alt=""
+                />
+                <p className="conditionWeather">
+                  {weatherCity?.main?.temp?.toFixed()} ° C
                 </p>
               </div>
-              <div className=" d-flex align-items-center justify-content-between p-0">
-                <div className="bg-inf square d-flex flex-column align-items-center justify-content-center">
-                  <p className="m-0">Max</p>
-                  <p className="leftText">
-                    {weatherCity?.main?.temp_max.toFixed()} ° C
-                  </p>
-                </div>
-                <div className="bg-inf square d-flex align-items-center justify-content-center mx-4">
-                  <img
-                    src={`http://openweathermap.org/img/wn/${weatherCity.weather[0].icon}@2x.png`}
-                    alt=""
-                  />
-                </div>
-                <div className="bg-inf square d-flex flex-column align-items-center justify-content-center">
-                  <p className="m-0">Min</p>
-                  <p className="leftText">
-                    {weatherCity?.main?.temp_min.toFixed()} ° C
-                  </p>
-                </div>
-              </div> */}
-              <p>General</p>
-              <p>{weatherCity.weather[0].description}</p>
-              <img
-                src={`http://openweathermap.org/img/wn/${weatherCity.weather[0].icon}@2x.png`}
-                alt=""
-              />
-              <p>{weatherCity?.main?.temp?.toFixed()} ° C</p>
               <p>
                 {dayOfWeek} , {hourItaly.slice(0, -3)}{" "}
               </p>
             </div>
           </Col>
           <Col xs={12} md={4}>
-            <div className="bgAllDiv p-3 ">
+            {/*             <div className="bgAllDiv p-3 weatherCard">
               <p>umidità: {weatherCity?.main?.humidity}</p>
               <p>vento: {weatherCity?.wind?.speed}</p>
               <p>direzione: {weatherCity?.wind?.deg}°</p>
               <p>pressione: {weatherCity?.main?.pressure}</p>
-            </div>
+            </div> */}
+            <Humidity />
           </Col>
         </Row>
       </div>
