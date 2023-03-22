@@ -12,7 +12,7 @@ export const WeatherSearch = () => {
   const dispatch = useDispatch();
   const weatherCity = useSelector((state) => state.dashboard.weather);
   const hour = useSelector((state) => state.dashboard.moreWeather);
-  console.log(hour);
+  console.log(weatherCity);
 
   useEffect(() => {
     dispatch(getWeatherAction(city));
@@ -30,26 +30,44 @@ export const WeatherSearch = () => {
     }
   };
 
+  const today = new Date();
+  const getDay = { weekday: "long" };
+  const dayOfWeek = today.toLocaleDateString("en-US", getDay);
+
+  const now = new Date();
+  const location = { timeZone: "Europe/Rome" };
+  const hourItaly = now.toLocaleTimeString("it-IT", location);
+
   return (
     <>
+      <div>
+        <Row className="mt-3 d-flex align-items-center">
+          <Col md={4}>
+            <FormControl
+              type="text"
+              placeholder="Search for places"
+              className="writeTasks"
+              value={inputText}
+              onChange={(e) => setInputText(e.target.value)}
+              onKeyDown={search}
+            />
+          </Col>
+          <Col>
+            <hr />
+          </Col>
+        </Row>
+      </div>
+      <div className="mt-3">
+        <p className="titleTasks">
+          Today's Highlights in{" "}
+          <span className="cityName">{weatherCity?.name}</span>
+        </p>
+      </div>
       <div className="mt-3">
         <Row>
           <Col xs={12} md={4}>
-            <div className="bgAllDiv p-3 weatherCard">
-              <p className="titleExpanse">Find your city</p>
-              <FormControl
-                type="text"
-                placeholder="Write here..."
-                className="inputBudget mt-2"
-                value={inputText}
-                onChange={(e) => setInputText(e.target.value)}
-                onKeyDown={search}
-              />
-            </div>
-          </Col>
-          <Col xs={12} md={4}>
-            <div className="bgAllDiv p-3 weatherCard">
-              <div>
+            <div className="bgAllDiv">
+              {/*               <div>
                 <p className="mt- city">
                   {weatherCity?.name} , {weatherCity?.main?.temp?.toFixed()} ° C
                 </p>
@@ -73,11 +91,21 @@ export const WeatherSearch = () => {
                     {weatherCity?.main?.temp_min.toFixed()} ° C
                   </p>
                 </div>
-              </div>
+              </div> */}
+              <p>General</p>
+              <p>{weatherCity.weather[0].description}</p>
+              <img
+                src={`http://openweathermap.org/img/wn/${weatherCity.weather[0].icon}@2x.png`}
+                alt=""
+              />
+              <p>{weatherCity?.main?.temp?.toFixed()} ° C</p>
+              <p>
+                {dayOfWeek} , {hourItaly.slice(0, -3)}{" "}
+              </p>
             </div>
           </Col>
           <Col xs={12} md={4}>
-            <div className="bgAllDiv p-3 weatherCard">
+            <div className="bgAllDiv p-3 ">
               <p>umidità: {weatherCity?.main?.humidity}</p>
               <p>vento: {weatherCity?.wind?.speed}</p>
               <p>direzione: {weatherCity?.wind?.deg}°</p>

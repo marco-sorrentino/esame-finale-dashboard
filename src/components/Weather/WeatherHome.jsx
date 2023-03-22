@@ -14,9 +14,7 @@ export const WeatherHome = () => {
           <Col xs={12} md={4}>
             <Forecast />
           </Col>
-          <Col>
-            <Chart />
-          </Col>
+          <Col>{/*  <Chart /> */}</Col>
         </Row>
       </div>
     </>

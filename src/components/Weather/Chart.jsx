@@ -42,7 +42,7 @@ export const Chart = () => {
               })}
             style={{ position: "relative", height: "195px" }}
           >
-            <CartesianGrid strokeDasharray="6 6 " />
+            <CartesianGrid strokeDasharray="12 12" strokeOpacity={0.5} />
             <XAxis dataKey="name" />
             <YAxis />
             <Tooltip />
