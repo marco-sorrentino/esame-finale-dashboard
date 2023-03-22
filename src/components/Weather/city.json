@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Roma",
+    "img": "https://static2-viaggi.corriereobjects.it/wp-content/uploads/2015/06/roma-getty.jpg?v=133898"
+  },
+  {
+    "name": "Turin",
+    "img": "https://static2-viaggi.corriereobjects.it/wp-content/uploads/2015/06/torino-getty-1080x810.jpg?v=133918"
+  },
+  {
+    "name": "Florence",
+    "img": "https://tourismmedia.italia.it/is/image/mitur/20210401173629-firenze-toscana-gettyimages-1145040590?wid=1600&hei=900&fit=constrain,1&fmt=webp"
+  },
+  {
+    "name": "Venice",
+    "img": "https://www.veneto.info/wp-content/uploads/sites/114/venezia-hd.jpg"
+  },
+  {
+    "name": "Naples",
+    "img": "https://siviaggia.it/wp-content/uploads/sites/2/2016/09/cosa-vedere-napoli.jpg"
+  },
+  {
+    "name": "Palermo",
+    "img": "https://www.theworldofsicily.com/wp-content/uploads/2018/11/La-Cattedrale-di-Palermo_anteprima.jpg"
+  },
+  {
+    "name": "Cagliari",
+    "img": "https://www.cagliarimag.com/wp-content/uploads/2020/01/visitare-cagliari-in-un-giorno-.jpg"
+  }
+]

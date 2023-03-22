@@ -5,7 +5,7 @@ import { useDispatch } from "react-redux";
 import { getWeatherAction, getWeatherHourAction } from "../redux/action";
 import "./weather.scss";
 import React from "react";
-import { Humidity } from "./Humidity";
+import cities from "./city.json";
 
 export const WeatherSearch = () => {
   const [city, setCity] = useState("Milan");
@@ -31,16 +31,9 @@ export const WeatherSearch = () => {
     }
   };
 
-  const today = new Date();
-  const getDay = { weekday: "long" };
-  const dayOfWeek = today.toLocaleDateString("en-US", getDay);
-
-  const now = new Date();
-  const location = { timeZone: "Europe/Rome" };
-  const hourItaly = now.toLocaleTimeString("it-IT", location);
-
   return (
     <>
+      {/*  <div onClick={() => setCity("new york")}>new york</div> */}
       <div>
         <Row className="mt-3 d-flex align-items-center">
           <Col md={4}>
@@ -59,44 +52,26 @@ export const WeatherSearch = () => {
         </Row>
       </div>
       <div className="mt-3">
+        <Row>
+          {cities.map((el, i) => {
+            return (
+              <Col key={i}>
+                <div onClick={() => setCity(el.name)} className="bgAllDiv">
+                  <img className="imgCity" src={el?.img} alt="" />
+                  <div>
+                    <p className="text-center py-1 fw-bold">{el.name}</p>
+                  </div>
+                </div>
+              </Col>
+            );
+          })}
+        </Row>
+      </div>
+      <div className="mt-3">
         <p className="titleTasks">
           Today's Highlights in{" "}
           <span className="cityName">{weatherCity?.name}</span>
         </p>
-      </div>
-      <div className="mt-3">
-        <Row>
-          <Col xs={12} md={4}>
-            <div className="bgAllDiv p-3 weatherCard">
-              <p className="weatherTitle">General</p>
-              <div className="d-flex align-items-center">
-                <p className="conditionWeather">
-                  {weatherCity.weather[0].description.charAt(0).toUpperCase() +
-                    weatherCity.weather[0].description.slice(1)}
-                </p>
-                <img
-                  src={`http://openweathermap.org/img/wn/${weatherCity.weather[0].icon}@2x.png`}
-                  alt=""
-                />
-                <p className="conditionWeather">
-                  {weatherCity?.main?.temp?.toFixed()} ° C
-                </p>
-              </div>
-              <p>
-                {dayOfWeek} , {hourItaly.slice(0, -3)}{" "}
-              </p>
-            </div>
-          </Col>
-          <Col xs={12} md={4}>
-            {/*             <div className="bgAllDiv p-3 weatherCard">
-              <p>umidità: {weatherCity?.main?.humidity}</p>
-              <p>vento: {weatherCity?.wind?.speed}</p>
-              <p>direzione: {weatherCity?.wind?.deg}°</p>
-              <p>pressione: {weatherCity?.main?.pressure}</p>
-            </div> */}
-            <Humidity />
-          </Col>
-        </Row>
       </div>
     </>
   );
