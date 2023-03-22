@@ -3,6 +3,8 @@ import { Chart } from "./Chart";
 import { Forecast } from "./Forecast";
 import { General } from "./General";
 import { Humidity } from "./Humidity";
+import { Pressure } from "./Pressure";
+import { SunsetSunrise } from "./SunsetSunrise";
 import { Temperatures } from "./Temperatures";
 import { WeatherSearch } from "./WeatherSearch";
 import { Wind } from "./Wind";
@@ -30,11 +32,20 @@ export const WeatherHome = () => {
         <Col>
           <Temperatures />
         </Col>
-        <Col></Col>
-        <Col></Col>
+        <Col>
+          <Pressure />
+        </Col>
+        <Col>
+          <SunsetSunrise />
+        </Col>
       </Row>
       <Row>
         <Forecast />
+      </Row>
+      <Row>
+        <Col>
+          <Chart />
+        </Col>
       </Row>
     </div>
   );
