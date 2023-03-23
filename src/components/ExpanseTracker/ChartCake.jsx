@@ -55,7 +55,7 @@ export const ChartCake = (props) => {
         </div>
       )}
     </> */
-    <ResponsiveContainer className="bgAllDiv" width="100%" height="100%">
+    <ResponsiveContainer className="bgAllDiv" height="100%" width="100%">
       <BarChart width={150} height={40} data={data}>
         <XAxis dataKey="nome" />
         <YAxis />
