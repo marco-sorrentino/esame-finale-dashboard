@@ -1,3 +1,5 @@
+/* General styling */
+
 .inputWeather {
   background-color: #f8f8f8;
 }
@@ -18,6 +20,8 @@
 .conditionWeather {
   font-weight: bold;
 }
+
+/* Major italian cities on weather search component */
 
 .imgCity {
   width: 100%;
@@ -54,6 +58,8 @@
   }
 }
 
+/* General component */
+
 .mobileWeatherText {
   @media (max-width: 768px) {
     font-size: 0.8em;
@@ -66,10 +72,14 @@
   }
 }
 
+/* Progress bar temperature */
+
 .barWidth {
   width: 100%;
   height: 10px;
 }
+
+/* Forecast component */
 
 .hour {
   font-size: 0.7em;
