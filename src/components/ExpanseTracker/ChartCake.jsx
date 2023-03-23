@@ -22,7 +22,12 @@ export const ChartCake = (props) => {
   const sumMoin = moin.reduce((accum, obj) => accum + obj, 0);
   const average = sumPlus + sumMoin / 2;
   const data = [
-    { nome: "income", income: sumPlus, expense: sumMoin, average: average },
+    {
+      nome: "income/average/expense",
+      income: sumPlus,
+      expense: sumMoin,
+      average: average,
+    },
     /* { nome: "average", expense: average }, */
     /* { nome: "expense", expense: sumMoin }, */
   ];
@@ -57,9 +62,23 @@ export const ChartCake = (props) => {
         <Tooltip />
         <Legend />
         <ReferenceLine y={0} stroke="#000" />
-        <Bar dataKey="income" fill="#8884d8" barSize={20} labelOffset={-30} />
-        <Bar dataKey="average" fill="#8884d8" barSize={20} />
-        <Bar dataKey="expense" fill="#8884d8" barSize={20} />
+        <defs>
+          <linearGradient id="colorGradient" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stopColor="#1CFEBA" stopOpacity="1" />
+            <stop offset="100%" stopColor="#62ff11" stopOpacity="0" />
+          </linearGradient>
+          <linearGradient id="colorGradient2" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stopColor="#FC26AA" stopOpacity="0" />
+            <stop offset="100%" stopColor="#FC26AA" stopOpacity="1" />
+          </linearGradient>
+          <linearGradient id="colorGradient3" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stopColor="#2653FC" stopOpacity="0.8" />
+            <stop offset="100%" stopColor="#2653FC" stopOpacity="0" />
+          </linearGradient>
+        </defs>
+        <Bar dataKey="income" fill="url(#colorGradient)" barSize={60} />
+        <Bar dataKey="average" fill="url(#colorGradient3)" barSize={60} />
+        <Bar dataKey="expense" fill="url(#colorGradient2)" barSize={60} />
       </BarChart>
     </ResponsiveContainer>
   );
