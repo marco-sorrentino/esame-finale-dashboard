@@ -29,11 +29,7 @@ export const ChartTracker = () => {
   return (
     <>
       {data && (
-        <ResponsiveContainer
-          className={"bgAllDiv  mt-3"}
-          width="100%"
-          height="100%"
-        >
+        <ResponsiveContainer className={"bgAllDiv"} width="100%" height="100%">
           <AreaChart
             className=""
             width={500}

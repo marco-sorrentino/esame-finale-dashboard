@@ -13,7 +13,7 @@ export const ExpanseTrackerHome = () => {
           <Budget />
         </Col>
       </Row>
-      <Row>
+      <Row className="mt-3 chartExpense">
         <Col xs={12} md={4}>
           <ChartCake />
         </Col>
