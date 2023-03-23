@@ -18,24 +18,24 @@ export const WeatherHome = () => {
         </Col>
       </Row>
       <Row className="mt-3">
-        <Col>
+        <Col xs={6} md={4}>
           <General />
         </Col>
-        <Col>
+        <Col xs={6} md={4}>
           <Humidity />
         </Col>
-        <Col>
+        <Col xs={12} md={4} className="mt-3 mt-md-0">
           <Wind />
         </Col>
       </Row>
       <Row className="mt-3">
-        <Col>
+        <Col xs={6} md={4}>
           <Temperatures />
         </Col>
-        <Col>
+        <Col xs={6} md={4}>
           <Pressure />
         </Col>
-        <Col>
+        <Col xs={12} md={4} className="mt-3 mt-md-0">
           <SunsetSunrise />
         </Col>
       </Row>
