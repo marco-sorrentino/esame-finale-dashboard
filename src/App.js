@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import { CalendarHome } from "./components/CalendarHomepage/CalendarHome";
 import { ExpanseTrackerHome } from "./components/ExpanseTracker/ExpanseTrackerHome";
+import { HomePage } from "./components/Home/HomePage";
 import { NavbarMobile } from "./components/NavbarMobile/NavbarMobile";
 import { BusinessNewsList } from "./components/News/BusinessNewsList";
 import { NewsHomePage } from "./components/News/NewsHomePage";
@@ -28,6 +29,7 @@ function App() {
             <Col md={9}>
               <Topbar />
               <Routes>
+                <Route path="/" element={<HomePage />} />
                 <Route path="/tasks" element={<TasksHome />} />
                 <Route
                   path="/expanse-tracker"

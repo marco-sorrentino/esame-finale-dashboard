@@ -21,10 +21,12 @@ export const Sidebar = () => {
         <div className="first-menu p-3 ">
           <p className="mb-0 main-menu">Main menu</p>
         </div>
-        <div className="bg-menu first-menu p-3 ">
-          <AiFillHome className=" iconSideBar" />
-          <p className="text-sidebar ms-2 mb-0">Home</p>
-        </div>
+        <Link className="noDecoration" to={"/"}>
+          <div className="bg-menu first-menu p-3 ">
+            <AiFillHome className=" iconSideBar" />
+            <p className="text-sidebar ms-2 mb-0">Home</p>
+          </div>
+        </Link>
         <Link className="noDecoration" to={"/calendar"}>
           <div className="bg-menu p-3">
             <BsFillCalendarRangeFill className=" iconSideBar" />
