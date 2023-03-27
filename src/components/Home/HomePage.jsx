@@ -4,6 +4,7 @@ import { ChartCake } from "../ExpanseTracker/ChartCake";
 import { BalanceWidget } from "./BalanceWidget";
 import { TasksWidget } from "./TasksWidget";
 import { ReadWidget } from "./ReadWidget";
+import { WeekWidget } from "./WeekWidget";
 import { CalendarWidget } from "./CalendarWidget";
 
 export const HomePage = () => {
@@ -20,6 +21,7 @@ export const HomePage = () => {
         <Col xs={12} md={4}>
           <p className="titleTasks mb-3">Tasks</p>
           <TasksWidget />
+          <WeekWidget />
         </Col>
 
         <Col xs={12} md={4}>

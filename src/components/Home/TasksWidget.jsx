@@ -36,18 +36,18 @@ export const TasksWidget = (props) => {
         </div>
       </div>
       <ProgressBar
-        className=" barProgress"
+        className=" barProgress fw-bold"
         now={todoList.length * 10}
         label={`${todoList.length}`}
       />
       <ProgressBar
-        className="mt-2  barProgress"
+        className="mt-2  barProgress fw-bold"
         variant="warning"
         now={execution.length * 10}
         label={`${execution.length}`}
       />
       <ProgressBar
-        className="mt-2  barProgress"
+        className="mt-2  barProgress fw-bold"
         variant="success"
         now={done.length * 10}
         label={`${done.length}`}
