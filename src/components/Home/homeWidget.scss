@@ -15,3 +15,26 @@
 .titleNewsWidget {
   font-size: 0.8em;
 }
+
+.widgetBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  padding: 1em;
+  box-shadow: 0px 0px 24px -12px rgba(0, 0, 0, 0.64);
+  -webkit-box-shadow: 0px 0px 24px -12px rgba(0, 0, 0, 0.24);
+}
+
+.total {
+  background-color: #7994fe4b;
+}
+
+.income {
+  background: rgba(148, 255, 232, 0.384);
+}
+
+.output {
+  background-color: #ff75c635;
+}

@@ -1,12 +1,13 @@
-import { Badge, Col, Row } from "react-bootstrap";
+import { Badge, Button, Col, Row } from "react-bootstrap";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
 import { REMOVE_READ } from "../redux/action";
 import "./homeWidget.scss";
 
 export const ReadWidget = () => {
   const seeNewsToRead = useSelector((state) => state.dashboard.readLaterNews);
-  const remove = useDispatch();
+  const navigate = useNavigate();
   console.log("NEWS", seeNewsToRead);
   return (
     <div>
@@ -44,17 +45,22 @@ export const ReadWidget = () => {
                     </div>
                   </div>
                 </div> */}
-                <div className="bgAllDiv mt-3 d-flex">
+                <div className="bgAllDiv mb-3 d-flex justify-content-between">
                   <div>
                     <img className="imgWidget" src={el?.urlToImage} alt="" />
                   </div>
                   <div className="p-3">
                     <p className="text-truncate fw-bold titleNewsWidget">
-                      {el?.title.substring(0, 26) + "..."}
+                      {el?.title.substring(0, 20) + "..."}
                     </p>
                     <p className=" titleNewsWidget">
-                      {el?.description.substring(0, 46)}
+                      {el?.description.substring(0, 43) + "..."}
                     </p>
+                  </div>
+                  <div className="d-flex align-items-center pe-3">
+                    <Link to={el.url}>
+                      <Button>Go</Button>
+                    </Link>
                   </div>
                 </div>
               </Col>

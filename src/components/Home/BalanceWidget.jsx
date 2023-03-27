@@ -15,18 +15,18 @@ export const BalanceWidget = () => {
   console.log("BOH", spesa);
 
   return (
-    <div className="bgAllDiv p-3">
-      <div className="d-flex">
+    <div className="bgAllDiv p-3 widgetCard d-flex justify-content-evenly">
+      <div className="widgetBox total">
         <FaBalanceScale />
         <p>{spesa}</p>
       </div>
-      <div>
+      <div className="widgetBox income">
         <FaLongArrowAltRight />
         <p>{sumPlus}</p>
       </div>
-      <div>
+      <div className="widgetBox output">
         <FaLongArrowAltLeft />
-        <p>{sumPlus}</p>
+        <p>{sumMoin}</p>
       </div>
     </div>
   );

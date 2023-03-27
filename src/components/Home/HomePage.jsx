@@ -1,9 +1,10 @@
 import { Col, Row } from "react-bootstrap";
 import { General } from "../Weather/General";
-import { ChartTracker } from "../ExpanseTracker/ChartTracker";
+import { ChartCake } from "../ExpanseTracker/ChartCake";
 import { BalanceWidget } from "./BalanceWidget";
 import { TasksWidget } from "./TasksWidget";
 import { ReadWidget } from "./ReadWidget";
+import { CalendarWidget } from "./CalendarWidget";
 
 export const HomePage = () => {
   return (
@@ -12,6 +13,8 @@ export const HomePage = () => {
         <Col xs={12} md={4}>
           <p className="titleTasks mb-3">Weather today</p>
           <General />
+          <p className="titleTasks my-3">Expense</p>
+          <BalanceWidget />
         </Col>
 
         <Col xs={12} md={4}>
@@ -20,6 +23,7 @@ export const HomePage = () => {
         </Col>
 
         <Col xs={12} md={4}>
+          <p className="titleTasks mb-3">Saved readings</p>
           <ReadWidget />
         </Col>
       </Row>
