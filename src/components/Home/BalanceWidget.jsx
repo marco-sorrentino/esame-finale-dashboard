@@ -2,6 +2,7 @@ import { useSelector } from "react-redux";
 import { FaBalanceScale } from "react-icons/fa";
 import { FaLongArrowAltRight } from "react-icons/fa";
 import { FaLongArrowAltLeft } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 export const BalanceWidget = () => {
   const seeMoney = useSelector((state) => state.dashboard.planner);
@@ -12,10 +13,15 @@ export const BalanceWidget = () => {
   const sumMoin = moin.reduce((accum, obj) => accum + obj, 0);
   const seeBudgetList = useSelector((state) => state.dashboard.planner);
   let spesa = seeBudgetList.reduce((accum, obj) => accum + obj.cost, 0);
-  console.log("BOH", spesa);
+  const navigate = useNavigate();
 
   return (
-    <div className="bgAllDiv p-3 widgetCard d-flex justify-content-evenly align-items-center">
+    <div
+      onClick={() => {
+        navigate("/expanse-tracker");
+      }}
+      className="bgAllDiv p-3 widgetCard d-flex justify-content-evenly align-items-center"
+    >
       <div className="d-flex flex-column align-items-center">
         <p>Total</p>
         <div className="widgetBox bg-primary text-white  mt-2">

@@ -21,6 +21,7 @@ export const HomePage = () => {
         <Col xs={12} md={4}>
           <p className="titleTasks mb-3">Tasks</p>
           <TasksWidget />
+          <p className="titleTasks my-3">Calendar</p>
           <WeekWidget />
         </Col>
 

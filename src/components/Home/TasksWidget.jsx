@@ -1,15 +1,21 @@
 import "./homeWidget.scss";
 import { ProgressBar } from "react-bootstrap";
 import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 export const TasksWidget = (props) => {
   const todoList = useSelector((state) => state.dashboard.todo);
   const execution = useSelector((state) => state.dashboard.execution);
   const done = useSelector((state) => state.dashboard.done);
-  console.log("LOOL", execution.length);
+  const navigate = useNavigate();
 
   return (
-    <div className="bgAllDiv widgetCard p-3">
+    <div
+      onClick={() => {
+        navigate("/tasks");
+      }}
+      className="bgAllDiv widgetCard p-3"
+    >
       <div className="d-flex mb-3 justify-content-between">
         <div className="d-flex align-items-center">
           <div
