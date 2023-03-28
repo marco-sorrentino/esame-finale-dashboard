@@ -53,7 +53,9 @@ export const WeekWidget = () => {
         return (
           <div key={i}>
             <div className="bg-danger text-center boxDate1">
-              <p className="text-white fw-bold">{el.nameDays}</p>
+              <p className="text-white fw-bold">
+                {el.nameDays.charAt(0).toUpperCase() + el.nameDays.slice(1)}
+              </p>
             </div>
             <div className="boxDate d-flex p-2 flex-column justify-content-between align-items-center">
               <p className="numberDate">{el.numberDays}</p>

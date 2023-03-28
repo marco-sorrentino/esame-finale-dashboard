@@ -14,22 +14,12 @@ export const CalendarHome = () => {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+  const [eventTitle, setEventTitle] = useState("");
+  const handleTitleChange = (e) => setEventTitle(e.target.value);
 
   const handleDateClick = (selected) => {
+    setCurrentEvent(selected);
     handleShow();
-    const title = prompt("please enter date");
-    const calendarApi = selected.view.calendar;
-    calendarApi.unselect();
-    console.log(calendarApi);
-    if (title) {
-      calendarApi.addEvent({
-        id: `${selected.dateStr} - ${title}`,
-        title,
-        start: selected.startStr,
-        end: selected.endStr,
-        allDay: selected.allDay,
-      });
-    }
   };
 
   const handleEventClick = (selected) => {
@@ -45,31 +35,44 @@ export const CalendarHome = () => {
   return (
     <div className="bgAllDiv mt-3 p-3">
       <Modal show={show} onHide={handleClose}>
-        <Modal.Header closeButton>
-          <Modal.Title>Modal heading</Modal.Title>
-        </Modal.Header>
+        <div className="ps-3 pt-3">
+          <Modal.Title>Add Event</Modal.Title>
+        </div>
         <Modal.Body>
-          <Form className="px-3" /* onSubmit={handleSubmit} */>
-            <Form.Control
-              placeholder="Write here"
-              className="inputBudget"
-              name="tracker"
-              onChange={(e) => {
-                setCurrentEvent(e.target.value);
-              }}
-              /* value={input}
-              onChange={(e) => setInput(e.target.value)} */
-            />
+          <Form onSubmit={handleClose}>
+            <Form.Group>
+              <Form.Label>Write your event here</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="What do you want to save?"
+                value={eventTitle}
+                onChange={handleTitleChange}
+              />
+            </Form.Group>
           </Form>
         </Modal.Body>
-        <Modal.Footer>
+        <div className="text-end pe-3 pb-3">
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>
-          <Button variant="primary" onClick={handleClose}>
-            Save Changes
+          <Button
+            variant="primary"
+            onClick={() => {
+              const calendarApi = currentEvent.view.calendar;
+              calendarApi.addEvent({
+                id: `${currentEvent.dateStr} - ${eventTitle}`,
+                title: eventTitle,
+                start: currentEvent.startStr,
+                end: currentEvent.endStr,
+                allDay: currentEvent.allDay,
+              });
+              setEventTitle("");
+              handleClose();
+            }}
+          >
+            Save
           </Button>
-        </Modal.Footer>
+        </div>
       </Modal>
       <div className="calendar">
         <FullCalendar
