@@ -19,14 +19,14 @@ export const HomePage = () => {
         </Col>
 
         <Col xs={12} md={4}>
-          <p className="titleTasks mb-3">Tasks</p>
+          <p className="titleTasks mt-3 mt-md-0 mb-3">Tasks</p>
           <TasksWidget />
           <p className="titleTasks my-3">Calendar</p>
           <WeekWidget />
         </Col>
 
         <Col xs={12} md={4}>
-          <p className="titleTasks mb-3">Saved readings</p>
+          <p className="titleTasks mt-3 mt-md-0  mb-3">Saved readings</p>
           <ReadWidget />
         </Col>
       </Row>
