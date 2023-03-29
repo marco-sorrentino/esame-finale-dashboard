@@ -20,7 +20,7 @@ export const TasksWidget = (props) => {
         <div className="d-flex align-items-center">
           <div
             style={{ width: "20px", height: "20px", borderRadius: "3px" }}
-            className="bg-primary me-2"
+            className="myBluBg me-2"
           ></div>
           <p>To do</p>
         </div>
@@ -28,7 +28,7 @@ export const TasksWidget = (props) => {
         <div className="d-flex align-items-center">
           <div
             style={{ width: "20px", height: "20px", borderRadius: "3px" }}
-            className="bg-warning me-2"
+            className="myYellowBg me-2"
           ></div>
           <p>Execution</p>
         </div>
@@ -36,7 +36,7 @@ export const TasksWidget = (props) => {
         <div className="d-flex align-items-center">
           <div
             style={{ width: "20px", height: "20px", borderRadius: "3px" }}
-            className="bg-success me-2"
+            className="myGreenBg me-2"
           ></div>
           <p>Done</p>
         </div>
@@ -53,7 +53,7 @@ export const TasksWidget = (props) => {
         label={`${execution.length}`}
       />
       <ProgressBar
-        className="mt-2  barProgress fw-bold"
+        className="mt-2 progress-bar-yellow  barProgress fw-bold"
         variant="success"
         now={done.length * 10}
         label={`${done.length}`}

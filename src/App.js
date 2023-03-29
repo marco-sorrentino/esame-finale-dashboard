@@ -2,6 +2,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Col, Container, Row } from "react-bootstrap";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
+import "./customColor.scss";
 import { CalendarHome } from "./components/CalendarHomepage/CalendarHome";
 import { ExpanseTrackerHome } from "./components/ExpanseTracker/ExpanseTrackerHome";
 import { HomePage } from "./components/Home/HomePage";

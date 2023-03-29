@@ -24,7 +24,7 @@ export const BalanceWidget = () => {
     >
       <div className="d-flex flex-column align-items-center">
         <p>Total</p>
-        <div className="widgetBox bg-primary text-white  mt-2">
+        <div className="widgetBox myBluBg text-white  mt-2">
           <FaBalanceScale className="iconWidgetExpense" />
           <p className="fw-bold">{spesa}</p>
         </div>
@@ -38,7 +38,7 @@ export const BalanceWidget = () => {
       </div>
       <div className="d-flex flex-column align-items-center">
         <p>Output</p>
-        <div className="widgetBox bg-danger text-white  mt-2">
+        <div className="widgetBox myRedBg text-white  mt-2">
           <FaLongArrowAltLeft className="iconWidgetExpense" />
           <p className="fw-bold">{sumMoin}</p>
         </div>

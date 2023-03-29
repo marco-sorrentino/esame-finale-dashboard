@@ -35,7 +35,7 @@ export const ReadLaterNews = () => {
                         <p>{el?.description}</p>
                       </div>
                       <div className="d-flex align-items-center">
-                        <p className="date">{el?.publishedAt.slice(0, -10)}</p>
+                        <p className="date">{el?.publishedAt?.slice(0, -10)}</p>
                         <p className="date ms-2">{el?.author}</p>
                         <div className="d-flex align-items-center">
                           <Badge
@@ -50,7 +50,7 @@ export const ReadLaterNews = () => {
                           >
                             Remove
                           </Badge>
-                          <Link className="mb-1 ms-2" to={el.url}>
+                          <Link className="mb-1 ms-2" to={el?.url}>
                             <Badge>Read</Badge>
                           </Link>
                         </div>

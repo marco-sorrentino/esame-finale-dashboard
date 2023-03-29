@@ -58,8 +58,8 @@ export const ReadWidget = () => {
                     </p>
                   </div>
                   <div className="d-flex align-items-center pe-3">
-                    <Link to={el.url}>
-                      <Button>Go</Button>
+                    <Link to={el?.url}>
+                      <Button className="myBluBg border-0">Go</Button>
                     </Link>
                   </div>
                 </div>

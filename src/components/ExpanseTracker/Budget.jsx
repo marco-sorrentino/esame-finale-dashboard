@@ -31,6 +31,21 @@ export const Budget = (props) => {
     setTracker("");
     document.getElementById("textInput").value = "";
     const inputCost = (document.getElementById("cost").value = "");
+    /*     tracker.text === "" || tracker.cost !== "" ? (
+      setShow(true)
+    ) : tracker.cost === "" || tracker.text !== "" ? (
+      setShow(true)
+    ) : tracker.text === "" && tracker.cost === "" ? (
+      <></>
+    ) : (
+      dispatch({
+        type: GET_BUDGET,
+        payload: tracker,
+      }) && setShow(false)
+    ); 
+    setTracker("");
+    document.getElementById("textInput").value = "";
+    const inputCost = (document.getElementById("cost").value = "");*/
   };
 
   return (
@@ -39,7 +54,6 @@ export const Budget = (props) => {
         <Row className="">
           <Col xs={12} md={4} className=" justify-content-center py-2">
             <p className="titleExpanse  ps-3 ">Balance</p>
-
             {spesa === 0 ? (
               <p className="ps-3 text-primary fs-4 fw-bold py-3">{spesa} €</p>
             ) : spesa > 0 ? (

@@ -29,13 +29,13 @@ export const BusinessNewsList = () => {
               return (
                 <SingleNews
                   key={i}
-                  img={el.urlToImage}
-                  author={el.author}
-                  title={el.title}
-                  description={el.description}
-                  url={el.url}
-                  content={el.content}
-                  publishedAt={el.publishedAt}
+                  img={el?.urlToImage}
+                  author={el?.author}
+                  title={el?.title}
+                  description={el?.description}
+                  url={el?.url}
+                  content={el?.content}
+                  publishedAt={el?.publishedAt}
                 />
               );
             })}

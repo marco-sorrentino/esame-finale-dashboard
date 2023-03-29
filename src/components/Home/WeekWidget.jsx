@@ -54,7 +54,7 @@ export const WeekWidget = () => {
         {weekDays.map((el, i) => {
           return (
             <div key={i}>
-              <div className="bg-danger text-center boxDate1">
+              <div className="myRedBg text-center boxDate1">
                 <p className="text-white fw-bold">
                   {el.nameDays.charAt(0).toUpperCase() + el.nameDays.slice(1)}
                 </p>
