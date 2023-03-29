@@ -13,7 +13,7 @@ export const Chart = () => {
   const dataChart = useSelector((state) => state.dashboard.moreWeather);
 
   const data = [
-    dataChart?.list.map((el, i) => {
+    dataChart?.list?.map((el, i) => {
       return { gradi: el.main.temp_max, minGradi: el.main.temp_min, key: i };
     }),
   ];
@@ -31,12 +31,12 @@ export const Chart = () => {
             width={500}
             height={400}
             data={dataChart?.list
-              .filter((_, i) => i % 8 === 0)
-              .map((el, i) => {
+              ?.filter((_, i) => i % 8 === 0)
+              ?.map((el, i) => {
                 return {
-                  name: el.dt_txt.slice(5, 10),
-                  Temp: el.main.temp.toFixed(),
-                  Feels: el.main.feels_like.toFixed(),
+                  name: el?.dt_txt.slice(5, 10),
+                  Temp: el?.main.temp.toFixed(),
+                  Feels: el?.main.feels_like.toFixed(),
                   key: i,
                 };
               })}

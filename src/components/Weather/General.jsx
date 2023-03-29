@@ -14,11 +14,11 @@ export const General = () => {
       <p className="weatherTitle">General</p>
       <div className="d-flex align-items-center">
         <p className="conditionWeather mobileWeatherText">
-          {weatherCity.weather[0].description.charAt(0).toUpperCase() +
-            weatherCity.weather[0].description.slice(1)}
+          {weatherCity?.weather?.[0]?.description.charAt(0).toUpperCase() +
+            weatherCity?.weather?.[0]?.description.slice(1)}
         </p>
         <img
-          src={`http://openweathermap.org/img/wn/${weatherCity.weather[0].icon}@2x.png`}
+          src={`http://openweathermap.org/img/wn/${weatherCity?.weather?.[0]?.icon}@2x.png`}
           alt=""
           className="weatherImageMobile"
         />

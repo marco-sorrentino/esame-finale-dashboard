@@ -12,7 +12,6 @@ import {
   removeExecutionAction,
   removeTodoAction,
 } from "../redux/action";
-import DropdownItem from "react-bootstrap/esm/DropdownItem";
 
 export const SingleTask = (props) => {
   const dispatch = useDispatch();

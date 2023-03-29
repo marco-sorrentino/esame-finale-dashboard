@@ -7,22 +7,22 @@ export const Humidity = () => {
     <div className="bgAllDiv p-3 weatherCard d-flex flex-column justify-content-between">
       <p className="weatherTitle">Humidity</p>
       <div>
-        <p className="fw-bold fs-4">{weatherCity?.main.humidity} %</p>
-        {weatherCity?.main.humidity < 50 ? (
+        <p className="fw-bold fs-4">{weatherCity?.main?.humidity} %</p>
+        {weatherCity?.main?.humidity < 50 ? (
           <ProgressBar
             variant="primary"
             className="barWidth"
-            now={weatherCity?.main.humidity}
+            now={weatherCity?.main?.humidity}
           />
         ) : (
           <ProgressBar
             variant="danger"
             className="barWidth"
-            now={weatherCity?.main.humidity}
+            now={weatherCity?.main?.humidity}
           />
         )}
       </div>
-      {weatherCity?.main.humidity < 50 ? <p>Low</p> : <p>High</p>}
+      {weatherCity?.main?.humidity < 50 ? <p>Low</p> : <p>High</p>}
     </div>
   );
 };

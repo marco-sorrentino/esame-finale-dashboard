@@ -11,8 +11,8 @@ export const Forecast = () => {
       </div>
       <div className="mt-3 d-flex">
         <Row className="mobileCities">
-          {hour.list
-            .filter((_, i) => i % 4 === 0)
+          {hour?.list
+            ?.filter((_, i) => i % 4 === 0)
             .map((el, i) => {
               return (
                 <Col key={i}>
