@@ -2,3 +2,11 @@
   font-weight: 700;
   font-size: 20px;
 }
+
+.linkNavBar {
+  margin-top: 0.25em;
+  &:hover {
+    cursor: pointer;
+    font-weight: bold;
+  }
+}

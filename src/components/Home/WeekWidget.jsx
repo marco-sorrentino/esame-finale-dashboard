@@ -40,32 +40,35 @@ export const WeekWidget = () => {
   };
 
   return (
-    <div
-      onClick={() => {
-        navigate("/calendar");
-      }}
-      className="d-flex bgAllDiv widgetCard p-3 justify-content-between align-items-center"
-    >
-      <button className="d-none" onClick={handlePrevWeek}>
-        Settimana precedente
-      </button>
-      {weekDays.map((el, i) => {
-        return (
-          <div key={i}>
-            <div className="bg-danger text-center boxDate1">
-              <p className="text-white fw-bold">
-                {el.nameDays.charAt(0).toUpperCase() + el.nameDays.slice(1)}
-              </p>
+    <>
+      <div
+        onClick={() => {
+          navigate("/calendar");
+        }}
+        className="d-flex bgAllDiv widgetCard p-3 justify-content-between align-items-center"
+      >
+        <button className="d-none" onClick={handlePrevWeek}>
+          Settimana precedente
+        </button>
+
+        {weekDays.map((el, i) => {
+          return (
+            <div key={i}>
+              <div className="bg-danger text-center boxDate1">
+                <p className="text-white fw-bold">
+                  {el.nameDays.charAt(0).toUpperCase() + el.nameDays.slice(1)}
+                </p>
+              </div>
+              <div className="boxDate d-flex p-2 flex-column justify-content-between align-items-center">
+                <p className="numberDate">{el.numberDays}</p>
+              </div>
             </div>
-            <div className="boxDate d-flex p-2 flex-column justify-content-between align-items-center">
-              <p className="numberDate">{el.numberDays}</p>
-            </div>
-          </div>
-        );
-      })}
-      <button className="d-none" onClick={handleNextWeek}>
-        Settimana successiva
-      </button>
-    </div>
+          );
+        })}
+        <button className="d-none" onClick={handleNextWeek}>
+          Settimana successiva
+        </button>
+      </div>
+    </>
   );
 };

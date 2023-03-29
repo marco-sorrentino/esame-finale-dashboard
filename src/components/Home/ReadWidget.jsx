@@ -8,7 +8,7 @@ import "./homeWidget.scss";
 export const ReadWidget = () => {
   const seeNewsToRead = useSelector((state) => state.dashboard.readLaterNews);
   const navigate = useNavigate();
-  console.log("NEWS", seeNewsToRead);
+
   return (
     <div>
       <Row>

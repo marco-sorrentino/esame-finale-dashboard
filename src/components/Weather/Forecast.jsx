@@ -3,7 +3,6 @@ import { useSelector } from "react-redux";
 
 export const Forecast = () => {
   const hour = useSelector((state) => state.dashboard.moreWeather);
-  console.log(hour);
 
   return (
     <>
@@ -14,9 +13,9 @@ export const Forecast = () => {
         <Row className="mobileCities">
           {hour.list
             .filter((_, i) => i % 4 === 0)
-            .map((el) => {
+            .map((el, i) => {
               return (
-                <Col>
+                <Col key={i}>
                   <div className="bgAllDiv p-3  d-flex flex-column align-items-center justify-content-center">
                     <p className="fw-bold">{el.dt_txt.slice(6, -8)}</p>
                     <p className="hour">{el.dt_txt.slice(11, -3)}</p>

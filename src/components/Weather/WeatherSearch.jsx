@@ -13,7 +13,6 @@ export const WeatherSearch = () => {
   const dispatch = useDispatch();
   const weatherCity = useSelector((state) => state.dashboard.weather);
   const hour = useSelector((state) => state.dashboard.moreWeather);
-  console.log(weatherCity);
 
   useEffect(() => {
     dispatch(getWeatherAction(city));

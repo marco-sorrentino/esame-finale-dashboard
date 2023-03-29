@@ -13,7 +13,6 @@ import {
 
 export const ChartTracker = () => {
   const seeMoney = useSelector((state) => state.dashboard.planner);
-  console.log("TOTALE", seeMoney);
   const moin = [];
   const plus = [];
   seeMoney.map((el) => (el.cost > 0 ? plus.push(el.cost) : moin.push(el.cost)));

@@ -32,8 +32,6 @@ export const ChartCake = (props) => {
     /* { nome: "expense", expense: sumMoin }, */
   ];
 
-  console.log("DATA", data);
-
   return (
     /*     <>
       {sumPlus === 0 && sumMoin === 0 ? (

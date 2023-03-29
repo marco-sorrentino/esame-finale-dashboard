@@ -17,13 +17,27 @@ export const NavbarMobile = () => {
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto">
-              <Link to={"/"}>Home</Link>
-              <Link to={"/calendar"}>Calendar</Link>
-              <Link to={"/tasks"}>Tasks</Link>
-              <Link to={"/expanse-tracker"}>Expense Tracker</Link>
-              <Link to={"/finance"}>Finance</Link>
-              <Link to={"/heading-news"}>News</Link>
-              <Link to={"/weather"}>Weather</Link>
+              <Link className="linkNavBar" to={"/"}>
+                Home
+              </Link>
+              <Link className="linkNavBar" to={"/calendar"}>
+                Calendar
+              </Link>
+              <Link className="linkNavBar" to={"/tasks"}>
+                Tasks
+              </Link>
+              <Link className="linkNavBar" to={"/expanse-tracker"}>
+                Expense Tracker
+              </Link>
+              <Link className="linkNavBar" to={"/finance"}>
+                Finance
+              </Link>
+              <Link className="linkNavBar" to={"/heading-news"}>
+                News
+              </Link>
+              <Link className="linkNavBar" to={"/weather"}>
+                Weather
+              </Link>
             </Nav>
           </Navbar.Collapse>
         </Container>

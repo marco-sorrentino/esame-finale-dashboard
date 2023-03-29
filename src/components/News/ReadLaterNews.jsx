@@ -1,6 +1,7 @@
 import { Badge, Col, Row } from "react-bootstrap";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import { REMOVE_READ } from "../redux/action";
 import { FilterMenu } from "./FilterMenu";
 
@@ -36,18 +37,23 @@ export const ReadLaterNews = () => {
                       <div className="d-flex align-items-center">
                         <p className="date">{el?.publishedAt.slice(0, -10)}</p>
                         <p className="date ms-2">{el?.author}</p>
-                        <Badge
-                          onClick={() =>
-                            remove({
-                              type: REMOVE_READ,
-                              payload: el,
-                            })
-                          }
-                          style={{ cursor: "pointer" }}
-                          className="ms-2 bg-danger"
-                        >
-                          Remove
-                        </Badge>
+                        <div className="d-flex align-items-center">
+                          <Badge
+                            onClick={() =>
+                              remove({
+                                type: REMOVE_READ,
+                                payload: el,
+                              })
+                            }
+                            style={{ cursor: "pointer" }}
+                            className="ms-2 bg-danger"
+                          >
+                            Remove
+                          </Badge>
+                          <Link className="mb-1 ms-2" to={el.url}>
+                            <Badge>Read</Badge>
+                          </Link>
+                        </div>
                       </div>
                     </div>
                   </div>
