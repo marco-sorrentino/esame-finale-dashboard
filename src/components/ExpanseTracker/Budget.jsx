@@ -41,7 +41,7 @@ export const Budget = (props) => {
             <p className="titleExpanse  ps-3 ">Balance</p>
 
             {spesa === 0 ? (
-              <p className="ps-3 text-dark fs-4 fw-bold py-3">{spesa} €</p>
+              <p className="ps-3 text-primary fs-4 fw-bold py-3">{spesa} €</p>
             ) : spesa > 0 ? (
               <p className="ps-3 text-success fs-4 fw-bold py-3">{spesa} €</p>
             ) : (
