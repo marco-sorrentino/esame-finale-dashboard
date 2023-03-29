@@ -8,12 +8,18 @@ import { FaCashRegister } from "react-icons/fa";
 import { AiFillDollarCircle } from "react-icons/ai";
 import { BiNews } from "react-icons/bi";
 import { BsFillCloudSunFill } from "react-icons/bs";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export const Sidebar = () => {
+  const navigate = useNavigate();
   return (
-    <Container fluid className="p-0 bg-sidebar d-none d-lg-block">
-      <Container className="d-flex align-items-center py-4 px-5">
+    <Container fluid className="p-0 cursor bg-sidebar d-none d-lg-block">
+      <Container
+        onClick={() => {
+          navigate("/");
+        }}
+        className="d-flex align-items-center py-4 px-5"
+      >
         <img src={logo} alt="" className="d-none d-lg-block" />
         <h4 className="ms-3 mb-0 d-none d-lg-block">DashBoard</h4>
       </Container>
