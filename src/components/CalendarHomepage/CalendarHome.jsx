@@ -32,6 +32,15 @@ export const CalendarHome = () => {
     }
   };
 
+  const initialEvents = [
+    {
+      id: "1",
+      title: "Capstone Project",
+      start: "2023-04-07",
+      allDay: true,
+    },
+  ];
+
   return (
     <div className="bgAllDiv mt-3 p-3">
       <Modal show={show} onHide={handleClose}>
@@ -95,6 +104,7 @@ export const CalendarHome = () => {
           select={handleDateClick}
           eventClick={handleEventClick}
           eventsSet={(events) => setCurrentEvent(events)}
+          initialEvents={initialEvents}
         ></FullCalendar>
       </div>
     </div>

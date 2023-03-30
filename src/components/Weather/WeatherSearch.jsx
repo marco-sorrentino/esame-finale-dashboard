@@ -10,6 +10,7 @@ import cities from "./city.json";
 export const WeatherSearch = () => {
   const [city, setCity] = useState("Milan");
   const [inputText, setInputText] = useState("");
+  const [show, setShow] = useState(false);
   const dispatch = useDispatch();
   const weatherCity = useSelector((state) => state.dashboard.weather);
   const hour = useSelector((state) => state.dashboard.moreWeather);
@@ -23,9 +24,9 @@ export const WeatherSearch = () => {
   const search = (e) => {
     // Gli dico di azionari al click del tasto Enter
     if (e.key === "Enter") {
-      // Prendo il valore che digito nell'input e lo salvo nello stato
-      setCity(e.target.value);
-      // All'enter l'input si resetta
+      inputText === ""
+        ? setShow(true)
+        : setCity(e.target.value) || setShow(false);
       setInputText("");
     }
   };
@@ -48,6 +49,13 @@ export const WeatherSearch = () => {
           <Col>
             <hr />
           </Col>
+          {show ? (
+            <p className="text-danger fw-bold mt-2">
+              You have to type somethig
+            </p>
+          ) : (
+            <></>
+          )}
         </Row>
       </div>
       <div className="mt-3">

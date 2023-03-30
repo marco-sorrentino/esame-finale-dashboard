@@ -170,7 +170,7 @@ export const getWeatherAction = (city) => {
           payload: data,
         });
       } else {
-        alert("taooo");
+        alert("City does not exists, retry please");
       }
     } catch (error) {
       console.log(error);
@@ -195,7 +195,6 @@ export const getWeatherHourAction = (city) => {
           payload: data,
         });
       } else {
-        alert("taooo");
       }
     } catch (error) {
       console.log(error);

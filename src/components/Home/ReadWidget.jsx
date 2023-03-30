@@ -54,7 +54,7 @@ export const ReadWidget = () => {
                       {el?.title.substring(0, 20) + "..."}
                     </p>
                     <p className=" titleNewsWidget">
-                      {el?.description.substring(0, 43) + "..."}
+                      {el?.description.substring(0, 40) + "..."}
                     </p>
                   </div>
                   <div className="d-flex align-items-center pe-3">
