@@ -54,6 +54,12 @@ a {
   }
 }
 
+.fc .fc-toolbar.fc-header-toolbar {
+  @media (max-width: 568px) {
+    display: contents;
+  }
+}
+
 .fc {
   display: flex;
   flex-direction: column;

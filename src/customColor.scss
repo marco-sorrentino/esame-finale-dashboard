@@ -1,7 +1,7 @@
-$blue: #0070ff;
+$blue: #2b77fb;
 $red: #ff004f;
 $green: #1bb954;
-$yellow: #e4d00a;
+$yellow: #f8de7e;
 
 .myRedBg {
   background-color: $red;
@@ -28,7 +28,7 @@ $yellow: #e4d00a;
 }
 
 .myYellowBg {
-  background-color: $yellow;
+  background-color: $yellow !important;
 }
 
 .myTextYellow {
