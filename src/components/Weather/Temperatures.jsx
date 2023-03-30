@@ -14,7 +14,7 @@ export const Temperatures = () => {
         <p className="ms-2">Max</p>
         <ProgressBar
           className="barWidth ms-3"
-          variant="warning"
+          id="pg4"
           now={averageTemp.toFixed()}
         />
       </div>

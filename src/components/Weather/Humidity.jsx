@@ -16,7 +16,7 @@ export const Humidity = () => {
           />
         ) : (
           <ProgressBar
-            variant="danger"
+            id="pg3"
             className="barWidth"
             now={weatherCity?.main?.humidity}
           />

@@ -14,14 +14,14 @@ export const ProgressTasks = (props) => {
         />
         <ProgressBar
           className="mt-3 bgAllDiv barProgress"
-          variant="warning"
+          id="pg2"
           now={props.numberExecution}
           label={`${props.numberExecution}%`}
           visuallyHidden
         />
         <ProgressBar
           className="mt-3 bgAllDiv barProgress"
-          variant="success"
+          id="pg5"
           now={props.numberDone}
           label={`${props.numberDone}`}
           visuallyHidden

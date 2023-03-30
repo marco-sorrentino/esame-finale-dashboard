@@ -93,3 +93,16 @@
 .hidden {
   display: block;
 }
+
+.progress#pg3 {
+  .progress-bar {
+    background-color: #ff004f;
+  }
+}
+
+.progress#pg4 {
+  .progress-bar {
+    background-color: #d4f70c;
+    color: black;
+  }
+}

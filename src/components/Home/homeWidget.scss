@@ -61,3 +61,20 @@
   border-top-left-radius: 10px;
   font-size: 0.9em;
 }
+
+.progress-bar {
+  background-color: #2b77fb;
+}
+
+.progress#pg2 {
+  .progress-bar {
+    background-color: #d4f70c;
+    color: black;
+  }
+}
+
+.progress#pg3 {
+  .progress-bar {
+    background-color: #1bb954;
+  }
+}

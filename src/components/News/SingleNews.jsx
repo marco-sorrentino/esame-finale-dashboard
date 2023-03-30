@@ -45,16 +45,18 @@ export const SingleNews = (props) => {
               <p className="date">{props.publishedAt.slice(0, -10)}</p>
 
               {toggle === true ? (
-                <BsBookmark
-                  className="myTextYellow ms-2 starIcon"
-                  onClick={() =>
-                    setToggle(!toggle) ||
-                    dispatch({
-                      type: READ_LATER,
-                      payload: props.obj,
-                    })
-                  }
-                />
+                <div className="p-1 ms-1 bgIconNews d-flex justify-content-center align-items-center">
+                  <BsBookmark
+                    className="myTextYellow  starIcon"
+                    onClick={() =>
+                      setToggle(!toggle) ||
+                      dispatch({
+                        type: READ_LATER,
+                        payload: props.obj,
+                      })
+                    }
+                  />
+                </div>
               ) : (
                 <BsBookmarkFill
                   className="myTextYellow ms-2 starIcon"
