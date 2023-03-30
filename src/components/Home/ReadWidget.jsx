@@ -59,7 +59,7 @@ export const ReadWidget = () => {
                   </div>
                   <div className="d-flex align-items-center pe-3">
                     <Link to={el?.url}>
-                      <Button className="myBluBg border-0">Go</Button>
+                      <Button className="myBluBg  border-0">Go</Button>
                     </Link>
                   </div>
                 </div>

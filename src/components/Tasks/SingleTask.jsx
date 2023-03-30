@@ -32,7 +32,7 @@ export const SingleTask = (props) => {
             dispatch(removeDoneAction(props));
           }}
         >
-          <AiFillDelete className="me-2 text-danger" /> Remove
+          <AiFillDelete className="me-2 myTextRed" /> Remove
         </Dropdown.Item>
         <Dropdown.Item
           className="d-flex align-items-center fw-bold"
@@ -41,7 +41,7 @@ export const SingleTask = (props) => {
             dispatch(executionListAction(props));
           }}
         >
-          <AiOutlineLoading3Quarters className="me-2 text-warning" /> Execution
+          <AiOutlineLoading3Quarters className="me-2 myTextYellow " /> Execution
         </Dropdown.Item>
         <Dropdown.Item
           className="d-flex align-items-center fw-bold"
@@ -51,7 +51,7 @@ export const SingleTask = (props) => {
             dispatch(removeTodoAction(props));
           }}
         >
-          <MdOutlineDone className="me-2 text-success" /> Done
+          <MdOutlineDone className="me-2 myTextGreen" /> Done
         </Dropdown.Item>
       </DropdownButton>
     </div>

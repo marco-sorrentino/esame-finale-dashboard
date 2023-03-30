@@ -22,6 +22,11 @@
       color: white;
     }
   }
+
+  &:hover {
+    background-color: #5f6fff;
+    color: white;
+  }
 }
 
 .filter {
@@ -63,6 +68,6 @@
   &:hover {
     font-size: 1.5em;
     cursor: pointer;
-    color: rgb(0, 20, 239) !important;
+    color: #978800 !important;
   }
 }

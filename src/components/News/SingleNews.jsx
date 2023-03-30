@@ -1,12 +1,16 @@
 import { Button, Col, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "./news.scss";
-import { AiFillStar } from "react-icons/ai";
+import { BsBookmark } from "react-icons/bs";
+import { BsBookmarkFill } from "react-icons/bs";
 import { useDispatch } from "react-redux";
-import { READ_LATER } from "../redux/action";
+import { READ_LATER, REMOVE_READ } from "../redux/action";
+import { useState } from "react";
 
 export const SingleNews = (props) => {
   const dispatch = useDispatch();
+  const remove = useDispatch();
+  const [toggle, setToggle] = useState(true);
 
   return (
     <Col xs={12} md={3} lg={4} className="mt-3">
@@ -39,15 +43,30 @@ export const SingleNews = (props) => {
             </Button>
             <div className="d-flex align-items-center">
               <p className="date">{props.publishedAt.slice(0, -10)}</p>
-              <AiFillStar
-                onClick={() => {
-                  dispatch({
-                    type: READ_LATER,
-                    payload: props.obj,
-                  });
-                }}
-                className="text-warning ms-2  starIcon"
-              />
+
+              {toggle === true ? (
+                <BsBookmark
+                  className="myTextYellow ms-2 starIcon"
+                  onClick={() =>
+                    setToggle(!toggle) ||
+                    dispatch({
+                      type: READ_LATER,
+                      payload: props.obj,
+                    })
+                  }
+                />
+              ) : (
+                <BsBookmarkFill
+                  className="myTextYellow ms-2 starIcon"
+                  onClick={() =>
+                    setToggle(!toggle) ||
+                    remove({
+                      type: REMOVE_READ,
+                      payload: props.obj,
+                    })
+                  }
+                />
+              )}
             </div>
           </div>
         </div>

@@ -19,8 +19,7 @@ export const SingleItemBudget = (props) => {
         {props?.cost > 0 ? (
           <Dropdown>
             <Dropdown.Toggle
-              className="px-2 py-0 fw-bold rounded-pill"
-              variant="success"
+              className="px-2 py-0 fw-bold rounded-pill myGreenBg border-0"
               id="dropdown-basic"
               style={{ fontSize: "12px" }}
             >
@@ -34,15 +33,14 @@ export const SingleItemBudget = (props) => {
                 }}
                 className="d-flex align-items-center"
               >
-                <AiFillDelete className="text-danger me-1" /> Remove
+                <AiFillDelete className="myTextRed me-1" /> Remove
               </Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>
         ) : (
           <Dropdown>
             <Dropdown.Toggle
-              className="px-2 py-0 fw-bold rounded-pill"
-              variant="danger"
+              className="px-2 py-0 fw-bold rounded-pill myRedBg border-0"
               id="dropdown-basic"
               style={{ fontSize: "12px" }}
             >
@@ -56,7 +54,7 @@ export const SingleItemBudget = (props) => {
                 }}
                 className="d-flex align-items-center"
               >
-                <AiFillDelete className="text-danger me-1" /> Remove
+                <AiFillDelete className="myTextRed me-1" /> Remove
               </Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>

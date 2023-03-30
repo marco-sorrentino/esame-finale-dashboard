@@ -55,11 +55,11 @@ export const Budget = (props) => {
           <Col xs={12} md={4} className=" justify-content-center py-2">
             <p className="titleExpanse  ps-3 ">Balance</p>
             {spesa === 0 ? (
-              <p className="ps-3 text-primary fs-4 fw-bold py-3">{spesa} €</p>
+              <p className="ps-3 myTextBlu fs-4 fw-bold py-3">{spesa} €</p>
             ) : spesa > 0 ? (
-              <p className="ps-3 text-success fs-4 fw-bold py-3">{spesa} €</p>
+              <p className="ps-3 myTextGreen fs-4 fw-bold py-3">{spesa} €</p>
             ) : (
-              <p className="ps-3 text-danger fs-4 fw-bold py-3">{spesa} €</p>
+              <p className="ps-3 myTextRed fs-4 fw-bold py-3">{spesa} €</p>
             )}
 
             <Form className="px-3" /* onSubmit={handleSubmit} */>
@@ -96,7 +96,7 @@ export const Budget = (props) => {
                 }}
               />
               {show ? (
-                <p className="text-danger fw-bold mt-2">
+                <p className="myTextRed fw-bold mt-2">
                   You have to type somethig
                 </p>
               ) : (
