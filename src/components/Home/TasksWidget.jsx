@@ -54,7 +54,7 @@ export const TasksWidget = (props) => {
       />
       <ProgressBar
         className="mt-2  barProgress fw-bold"
-        id="pg3"
+        id="pg6"
         now={done.length * 10}
         label={`${done.length}`}
       />
