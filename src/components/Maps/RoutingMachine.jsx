@@ -3,7 +3,6 @@ import L from "leaflet";
 import "leaflet-routing-machine";
 import "leaflet-routing-machine/dist/leaflet-routing-machine.css";
 import { useMap } from "react-leaflet";
-import { BsFillCarFrontFill } from "react-icons/bs";
 
 export const RoutingMachine = () => {
   const map = useMap();

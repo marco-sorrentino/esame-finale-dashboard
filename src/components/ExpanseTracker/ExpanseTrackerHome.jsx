@@ -2,7 +2,6 @@ import "./expanseTrackerHome.scss";
 import { Col, Row } from "react-bootstrap";
 import { Budget } from "./Budget";
 import { ChartCake } from "./ChartCake";
-import { Calculator } from "./Calculator";
 import { ChartTracker } from "./ChartTracker";
 
 export const ExpanseTrackerHome = () => {

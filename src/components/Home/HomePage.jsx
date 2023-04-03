@@ -1,6 +1,5 @@
 import { Col, Row } from "react-bootstrap";
 import { General } from "../Weather/General";
-import { ChartCake } from "../ExpanseTracker/ChartCake";
 import { BalanceWidget } from "./BalanceWidget";
 import { TasksWidget } from "./TasksWidget";
 import { ReadWidget } from "./ReadWidget";

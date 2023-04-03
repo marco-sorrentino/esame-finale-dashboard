@@ -1,5 +1,5 @@
 import "./navbarmobile.scss";
-import { Container, NavDropdown } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import logo from "../../assets/images/LOGO.svg";

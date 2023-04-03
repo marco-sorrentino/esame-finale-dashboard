@@ -1,6 +1,6 @@
 import "leaflet/dist/leaflet.css";
 import "./maps.scss";
-import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
+import { MapContainer, TileLayer } from "react-leaflet";
 import "leaflet-control-geocoder/dist/Control.Geocoder.css";
 import "leaflet-control-geocoder/dist/Control.Geocoder.js";
 import L from "leaflet";
@@ -19,11 +19,7 @@ export const MapComponent = () => {
 
   return (
     <div className="mt-3 bgAllDiv p-3">
-      <MapContainer
-        center={[45.464203, 9.189982]}
-        zoom={14}
-        scrollWheelZoom={true}
-      >
+      <MapContainer center={position} zoom={14} scrollWheelZoom={true}>
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

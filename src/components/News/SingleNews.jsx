@@ -1,4 +1,4 @@
-import { Button, Col, Row } from "react-bootstrap";
+import { Button, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "./news.scss";
 import { BsBookmark } from "react-icons/bs";

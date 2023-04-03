@@ -1,5 +1,4 @@
-import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
-import { useNavigate } from "react-router-dom";
+import { MapContainer, TileLayer } from "react-leaflet";
 
 export const MapWidget = () => {
   const position = [45.464203, 9.189982];

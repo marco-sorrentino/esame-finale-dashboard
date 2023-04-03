@@ -7,8 +7,6 @@ import {
   CartesianGrid,
   Tooltip,
   ResponsiveContainer,
-  Line,
-  LineChart,
 } from "recharts";
 
 export const ChartTracker = () => {
@@ -16,8 +14,6 @@ export const ChartTracker = () => {
   const moin = [];
   const plus = [];
   seeMoney.map((el) => (el.cost > 0 ? plus.push(el.cost) : moin.push(el.cost)));
-  const sumPlus = plus.reduce((accum, obj) => accum + obj, 0);
-  const sumMoin = moin.reduce((accum, obj) => accum + obj, 0);
 
   const data = [
     seeMoney?.map((el, i) => {

@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { Button } from "react-bootstrap";
 import "./expanseTrackerHome.scss";
 
 export const Calculator = () => {

@@ -1,7 +1,5 @@
 import daygrid from "@fullcalendar/daygrid";
-import list from "@fullcalendar/list";
 import FullCalendar from "@fullcalendar/react";
-import timegrid from "@fullcalendar/timegrid";
 import "./homeWidget.scss";
 
 export const CalendarWidget = () => {

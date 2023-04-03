@@ -1,13 +1,11 @@
-import { Badge, Button, Col, Row } from "react-bootstrap";
-import { useDispatch } from "react-redux";
+import { Button, Col, Row } from "react-bootstrap";
 import { useSelector } from "react-redux";
-import { Link, useNavigate } from "react-router-dom";
-import { REMOVE_READ } from "../redux/action";
+import { Link } from "react-router-dom";
+
 import "./homeWidget.scss";
 
 export const ReadWidget = () => {
   const seeNewsToRead = useSelector((state) => state.dashboard.readLaterNews);
-  const navigate = useNavigate();
 
   return (
     <div>

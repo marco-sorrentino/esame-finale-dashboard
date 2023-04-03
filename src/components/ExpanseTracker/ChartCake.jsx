@@ -1,12 +1,9 @@
-import { PieChart } from "react-minimal-pie-chart";
 import { useSelector } from "react-redux";
 import {
   BarChart,
   Bar,
-  Cell,
   XAxis,
   YAxis,
-  CartesianGrid,
   Tooltip,
   Legend,
   ReferenceLine,
