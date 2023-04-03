@@ -60,3 +60,8 @@
   cursor: pointer;
   transition: background-color 0.2s ease;
 }
+
+.leaflet-container.leaflet-touch-drag.leaflet-touch-zoom {
+  touch-action: none;
+  border-radius: 10px;
+}
