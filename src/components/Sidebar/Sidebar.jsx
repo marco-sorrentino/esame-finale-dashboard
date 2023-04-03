@@ -51,10 +51,12 @@ export const Sidebar = () => {
             <p className="text-sidebar ms-2">Expanse Tracker</p>
           </div>
         </Link>
-        <div className="bg-menu p-3">
-          <AiFillDollarCircle className="iconSideBar" />
-          <p className="text-sidebar ms-2">Finance</p>
-        </div>
+        <Link to={"/maps"}>
+          <div className="bg-menu p-3">
+            <AiFillDollarCircle className="iconSideBar" />
+            <p className="text-sidebar ms-2">Maps</p>
+          </div>
+        </Link>
         <Link to={"/heading-news"}>
           <div className="bg-menu p-3">
             <BiNews className=" iconSideBar" />

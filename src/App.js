@@ -16,6 +16,7 @@ import { Sidebar } from "./components/Sidebar/Sidebar";
 import { TasksHome } from "./components/Tasks/TasksHome";
 import { Topbar } from "./components/Topbar/Topbar";
 import { WeatherHome } from "./components/Weather/WeatherHome";
+import { MapComponent } from "./components/Maps/MapComponent";
 
 function App() {
   return (
@@ -46,6 +47,7 @@ function App() {
                 <Route path="/sport-news" element={<SportNewsList />} />
                 <Route path="/read-later-news" element={<ReadLaterNews />} />
                 <Route path="/weather" element={<WeatherHome />} />
+                <Route path="/maps" element={<MapComponent />} />
               </Routes>
             </Col>
           </Row>
