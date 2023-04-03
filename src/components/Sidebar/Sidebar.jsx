@@ -48,7 +48,7 @@ export const Sidebar = () => {
         <Link className="noDecoration" to={"/expanse-tracker"}>
           <div className="bg-menu p-3">
             <FaCashRegister className=" iconSideBar" />
-            <p className="text-sidebar ms-2">Expanse Tracker</p>
+            <p className="text-sidebar ms-2">Expense Tracker</p>
           </div>
         </Link>
         <Link to={"/maps"}>

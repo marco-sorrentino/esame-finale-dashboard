@@ -39,6 +39,12 @@ export const CalendarHome = () => {
       start: "2023-04-07",
       allDay: true,
     },
+    {
+      id: "2",
+      title: "Easter",
+      start: "2023-04-09",
+      allDay: true,
+    },
   ];
 
   return (
