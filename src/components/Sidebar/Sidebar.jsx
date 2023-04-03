@@ -5,7 +5,7 @@ import { AiFillHome } from "react-icons/ai";
 import { BsFillCalendarRangeFill } from "react-icons/bs";
 import { FaTasks } from "react-icons/fa";
 import { FaCashRegister } from "react-icons/fa";
-import { AiFillDollarCircle } from "react-icons/ai";
+import { BsPinMapFill } from "react-icons/bs";
 import { BiNews } from "react-icons/bi";
 import { BsFillCloudSunFill } from "react-icons/bs";
 import { Link, useNavigate } from "react-router-dom";
@@ -53,7 +53,7 @@ export const Sidebar = () => {
         </Link>
         <Link to={"/maps"}>
           <div className="bg-menu p-3">
-            <AiFillDollarCircle className="iconSideBar" />
+            <BsPinMapFill className="iconSideBar" />
             <p className="text-sidebar ms-2">Maps</p>
           </div>
         </Link>

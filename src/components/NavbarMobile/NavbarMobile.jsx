@@ -29,8 +29,8 @@ export const NavbarMobile = () => {
               <Link className="linkNavBar" to={"/expanse-tracker"}>
                 Expense Tracker
               </Link>
-              <Link className="linkNavBar" to={"/finance"}>
-                Finance
+              <Link className="linkNavBar" to={"/maps"}>
+                Maps
               </Link>
               <Link className="linkNavBar" to={"/heading-news"}>
                 News
