@@ -15,7 +15,7 @@ export const ReadWidget = () => {
         {seeNewsToRead &&
           seeNewsToRead.map((el, i) => {
             return (
-              <Col key={i} xs={12}>
+              <Col key={i} xs={12} md={4}>
                 {/*                 <div className="d-flex newsWidget  bgAllDiv mt-3">
                   <div>
                     <img className="imgWidget" src={el?.urlToImage} alt="" />
