@@ -31,22 +31,9 @@ export const Budget = (props) => {
     setTracker("");
     document.getElementById("textInput").value = "";
     const inputCost = (document.getElementById("cost").value = "");
-    /*     tracker.text === "" || tracker.cost !== "" ? (
-      setShow(true)
-    ) : tracker.cost === "" || tracker.text !== "" ? (
-      setShow(true)
-    ) : tracker.text === "" && tracker.cost === "" ? (
-      <></>
-    ) : (
-      dispatch({
-        type: GET_BUDGET,
-        payload: tracker,
-      }) && setShow(false)
-    ); 
-    setTracker("");
-    document.getElementById("textInput").value = "";
-    const inputCost = (document.getElementById("cost").value = "");*/
   };
+
+  console.log();
 
   return (
     <>
@@ -116,7 +103,7 @@ export const Budget = (props) => {
                   <div key={i}>
                     <SingleItemBudget
                       text={
-                        el?.text.charAt(0).toUpperCase() + el?.text.slice(1)
+                        el?.text?.charAt(0).toUpperCase() + el?.text?.slice(1)
                       }
                       cost={el?.cost}
                       obj={el}
@@ -135,7 +122,7 @@ export const Budget = (props) => {
                   <div key={i}>
                     <SingleItemBudget
                       text={
-                        el?.text.charAt(0).toUpperCase() + el?.text.slice(1)
+                        el?.text?.charAt(0).toUpperCase() + el?.text?.slice(1)
                       }
                       cost={el?.cost}
                       obj={el}
