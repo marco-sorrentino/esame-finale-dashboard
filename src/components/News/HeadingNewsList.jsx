@@ -5,36 +5,31 @@ import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { getHeadingNewsAction } from "../redux/action";
 import { FilterMenu } from "./FilterMenu";
+import headingNews from "./headingNews.json";
 
 export const HeadingNewsList = (props) => {
-  const dispatch = useDispatch();
-  const seeHeadingNews = useSelector((state) => state.dashboard.headingNews);
-
-  useEffect(() => {
-    dispatch(getHeadingNewsAction());
-  }, []);
+  console.log(headingNews);
 
   return (
     <>
       <FilterMenu />
       <div className="prova">
         <Row>
-          {seeHeadingNews &&
-            seeHeadingNews.map((el, i) => {
-              return (
-                <SingleNews
-                  key={i}
-                  img={el.urlToImage}
-                  author={el.author}
-                  title={el.title}
-                  description={el.description}
-                  url={el.url}
-                  content={el.content}
-                  publishedAt={el.publishedAt}
-                  obj={el}
-                />
-              );
-            })}
+          {headingNews.articles.map((el, i) => {
+            return (
+              <SingleNews
+                key={i}
+                img={el.urlToImage}
+                author={el.author}
+                title={el.title}
+                description={el.description}
+                url={el.url}
+                content={el.content}
+                publishedAt={el.publishedAt}
+                obj={el}
+              />
+            );
+          })}
         </Row>
       </div>
     </>

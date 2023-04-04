@@ -15,7 +15,6 @@ export const Budget = (props) => {
   const dispatch = useDispatch();
   const seeBudgetList = useSelector((state) => state.dashboard.planner);
   let spesa = seeBudgetList.reduce((accum, obj) => accum + obj.cost, 0);
-  console.log(seeBudgetList);
 
   /*   const handleSubmit = (e) => {
     e.preventDefault();

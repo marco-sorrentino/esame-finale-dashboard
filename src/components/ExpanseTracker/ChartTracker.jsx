@@ -16,7 +16,6 @@ export const ChartTracker = () => {
   seeMoney.map((el) => (el.cost > 0 ? plus.push(el.cost) : moin.push(el.cost)));
   const noZero = [];
   seeMoney.map((el) => (el.cost !== 0 ? noZero.push(el) : <></>));
-  console.log("NOZERO", noZero);
 
   const data = [
     noZero?.map((el, i) => {
