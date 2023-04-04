@@ -1,17 +1,16 @@
 import { Button, Col, Row } from "react-bootstrap";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import headingNews from "../News/headingNews.json";
 
 import "./homeWidget.scss";
 
 export const ReadWidget = () => {
-  const seeNewsToRead = useSelector((state) => state.dashboard.readLaterNews);
-
   return (
     <div>
       <Row>
-        {seeNewsToRead &&
-          seeNewsToRead.map((el, i) => {
+        {headingNews.articles
+          .map((el, i) => {
             return (
               <Col key={i} xs={12} md={4}>
                 {/*                 <div className="d-flex newsWidget  bgAllDiv mt-3">
@@ -63,7 +62,8 @@ export const ReadWidget = () => {
                 </div>
               </Col>
             );
-          })}
+          })
+          .slice(0, 3)}
       </Row>
     </div>
   );

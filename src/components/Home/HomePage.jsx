@@ -31,7 +31,7 @@ export const HomePage = () => {
       </Row>
       <Row className="mt-2">
         <Col>
-          <p className="titleTasks mt-3 mt-md-0  mb-3">Saved readings</p>
+          <p className="titleTasks mt-3 mt-md-0  mb-3">Top news</p>
           <ReadWidget />
         </Col>
       </Row>
