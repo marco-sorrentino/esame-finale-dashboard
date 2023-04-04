@@ -14,9 +14,12 @@ export const ChartTracker = () => {
   const moin = [];
   const plus = [];
   seeMoney.map((el) => (el.cost > 0 ? plus.push(el.cost) : moin.push(el.cost)));
+  const noZero = [];
+  seeMoney.map((el) => (el.cost !== 0 ? noZero.push(el) : <></>));
+  console.log("NOZERO", noZero);
 
   const data = [
-    seeMoney?.map((el, i) => {
+    noZero?.map((el, i) => {
       return { totale: el.cost, key: i };
     }),
   ];
@@ -29,7 +32,7 @@ export const ChartTracker = () => {
             className=""
             width={500}
             height={400}
-            data={seeMoney?.map((el, i) => {
+            data={noZero?.map((el, i) => {
               return {
                 name: el.text,
                 cost: el.cost,

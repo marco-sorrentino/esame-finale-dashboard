@@ -7,11 +7,15 @@ import "./expanseTrackerHome.scss";
 import { SingleItemBudget } from "./SingleItemBudget";
 
 export const Budget = (props) => {
-  const [tracker, setTracker] = useState("");
+  const [tracker, setTracker] = useState({
+    text: "",
+    cost: 0,
+  });
   const [show, setShow] = useState(false);
   const dispatch = useDispatch();
   const seeBudgetList = useSelector((state) => state.dashboard.planner);
   let spesa = seeBudgetList.reduce((accum, obj) => accum + obj.cost, 0);
+  console.log(seeBudgetList);
 
   /*   const handleSubmit = (e) => {
     e.preventDefault();
@@ -56,14 +60,18 @@ export const Budget = (props) => {
                 name="tracker"
                 id="textInput"
                 onChange={(e) => {
-                  setTracker((list) => ({ ...list, text: e.target.value }));
+                  setTracker((list) => ({
+                    ...list,
+                    text: e.target.value,
+                    cost: 0,
+                  }));
                 }}
                 /* value={input}
               onChange={(e) => setInput(e.target.value)} */
               />
               {show ? (
-                <p className="text-danger fw-bold mt-2">
-                  You have to type somethig
+                <p className="myTextRed fw-bold mt-2">
+                  You have to type something
                 </p>
               ) : (
                 <></>
@@ -84,7 +92,7 @@ export const Budget = (props) => {
               />
               {show ? (
                 <p className="myTextRed fw-bold mt-2">
-                  You have to type somethig
+                  You have to type something
                 </p>
               ) : (
                 <></>
