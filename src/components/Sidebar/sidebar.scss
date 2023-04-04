@@ -50,6 +50,26 @@ div {
       color: white !important;
     }
   }
+  &:active {
+    background-color: rgba(98, 112, 236, 0.88);
+    cursor: pointer;
+    .text-sidebar {
+      color: white;
+    }
+    .iconSideBar {
+      color: white !important;
+    }
+  }
+  &:focus {
+    background-color: rgba(98, 112, 236, 0.88);
+    cursor: pointer;
+    .text-sidebar {
+      color: white;
+    }
+    .iconSideBar {
+      color: white !important;
+    }
+  }
 }
 
 .first-menu {

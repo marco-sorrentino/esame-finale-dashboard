@@ -28,43 +28,43 @@ export const Sidebar = () => {
           <p className="mb-0 main-menu">Main menu</p>
         </div>
         <Link className="noDecoration" to={"/"}>
-          <div className="bg-menu first-menu p-3 ">
+          <div tabindex="1" className="bg-menu first-menu p-3 ">
             <AiFillHome className=" iconSideBar" />
             <p className="text-sidebar ms-2 mb-0">Home</p>
           </div>
         </Link>
         <Link className="noDecoration" to={"/calendar"}>
-          <div className="bg-menu p-3">
+          <div tabindex="2" className="bg-menu p-3">
             <BsFillCalendarRangeFill className=" iconSideBar" />
             <p className="text-sidebar ms-2">Calendar</p>
           </div>
         </Link>
         <Link className="noDecoration" to={"/tasks"}>
-          <div className="bg-menu p-3">
+          <div tabindex="3" className="bg-menu p-3">
             <FaTasks className=" iconSideBar" />
             <p className="text-sidebar ms-2 ">Tasks</p>
           </div>
         </Link>
         <Link className="noDecoration" to={"/expanse-tracker"}>
-          <div className="bg-menu p-3">
+          <div tabindex="4" className="bg-menu p-3">
             <FaCashRegister className=" iconSideBar" />
             <p className="text-sidebar ms-2">Expense Tracker</p>
           </div>
         </Link>
         <Link to={"/maps"}>
-          <div className="bg-menu p-3">
+          <div tabindex="5" className="bg-menu p-3">
             <BsPinMapFill className="iconSideBar" />
             <p className="text-sidebar ms-2">Maps</p>
           </div>
         </Link>
         <Link to={"/heading-news"}>
-          <div className="bg-menu p-3">
+          <div tabindex="6" className="bg-menu p-3">
             <BiNews className=" iconSideBar" />
             <p className="text-sidebar ms-2">News</p>
           </div>
         </Link>
         <Link to={"/weather"}>
-          <div className="bg-menu last-menu p-3">
+          <div tabindex="7" className="bg-menu last-menu p-3">
             <BsFillCloudSunFill className=" iconSideBar" />
             <p className="text-sidebar ms-2">Weather</p>
           </div>
