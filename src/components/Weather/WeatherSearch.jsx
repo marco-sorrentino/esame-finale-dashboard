@@ -51,7 +51,7 @@ export const WeatherSearch = () => {
           </Col>
           {show ? (
             <p className="text-danger fw-bold mt-2">
-              You have to type somethig
+              You have to type something
             </p>
           ) : (
             <></>
@@ -64,12 +64,12 @@ export const WeatherSearch = () => {
             return (
               <Col key={i}>
                 <div
-                  onClick={() => setCity(el.name)}
+                  onClick={() => setCity(el?.name)}
                   className="bgAllDiv cities"
                 >
                   <img className="imgCity" src={el?.img} alt="" />
                   <div>
-                    <p className="text-center py-1 fw-bold">{el.name}</p>
+                    <p className="text-center py-1 fw-bold">{el?.name}</p>
                   </div>
                 </div>
               </Col>
