@@ -20,7 +20,7 @@ export const SingleTask = (props) => {
     <div className="d-flex justify-content-between align-items-center bgAllDiv mt-2 ps-3  py-2">
       <p className="">{props.text}</p>
       <DropdownButton
-        className="d-flex flex-row-reverse"
+        className="d-flex buttonDrop flex-row-reverse"
         id="dropdown-basic-button"
         title={<SlOptions className="iconOptionTodo" />}
       >

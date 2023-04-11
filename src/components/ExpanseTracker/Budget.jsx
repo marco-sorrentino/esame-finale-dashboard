@@ -109,6 +109,7 @@ export const Budget = (props) => {
                 return el?.cost > 0 ? (
                   <div key={i}>
                     <SingleItemBudget
+                      className="bgLi"
                       text={
                         el?.text?.charAt(0).toUpperCase() + el?.text?.slice(1)
                       }

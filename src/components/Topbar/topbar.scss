@@ -42,7 +42,19 @@
     }
   }
 
-  .boxDate {
+  .boxDate,
+  .writeTasks,
+  .inputBudget {
     background-color: #4f4b4b;
+  }
+
+  .ctaBudget,
+  .bgIconNews {
+    background-color: #4f4b4b;
+  }
+
+  #dropdown-basic-button,
+  .list-group-item:last-child {
+    background-color: #242323;
   }
 }
