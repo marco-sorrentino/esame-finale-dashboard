@@ -13,7 +13,7 @@ export const Temperatures = () => {
         <p className="fw-bold fs-4">{weatherCity?.main?.temp_max.toFixed()}°</p>
         <p className="ms-2">Max</p>
         <ProgressBar
-          className="barWidth ms-3"
+          className="barWidth ms-3 barProgress"
           id="pg4"
           now={averageTemp.toFixed()}
         />

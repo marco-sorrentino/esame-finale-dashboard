@@ -8,11 +8,10 @@ import { AiFillBell } from "react-icons/ai";
 import { useEffect, useState } from "react";
 
 export const Topbar = () => {
-  const [theme, setTheme] = useState(false);
+  /*   const [theme, setTheme] = useState(false);
 
   const handleChange = () => {
     setTheme(!theme);
-    console.log("ciao");
   };
 
   useEffect(() => {
@@ -21,7 +20,23 @@ export const Topbar = () => {
     } else {
       document.body.classList.remove("darkMode");
     }
-  });
+  }); */
+
+  const [theme, setTheme] = useState(localStorage.getItem("theme") === "dark");
+
+  const handleChange = () => {
+    const newTheme = !theme;
+    setTheme(newTheme);
+    localStorage.setItem("theme", newTheme ? "dark" : "light");
+  };
+
+  useEffect(() => {
+    if (theme === true) {
+      document.body.classList.add("darkMode");
+    } else {
+      document.body.classList.remove("darkMode");
+    }
+  }, [theme]);
 
   return (
     <Container

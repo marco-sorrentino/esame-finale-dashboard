@@ -11,7 +11,7 @@ export const Humidity = () => {
         {weatherCity?.main?.humidity < 50 ? (
           <ProgressBar
             variant="primary"
-            className="barWidth"
+            className="barWidth barProgress"
             now={weatherCity?.main?.humidity}
           />
         ) : (
