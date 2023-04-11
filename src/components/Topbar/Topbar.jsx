@@ -2,7 +2,8 @@ import { Container } from "react-bootstrap";
 import "./topbar.scss";
 import portrait from "../../assets/images/portrait copia.JPG";
 import { AiFillHeart } from "react-icons/ai";
-import { AiFillSetting } from "react-icons/ai";
+import { BsFillMoonFill } from "react-icons/bs";
+import { BsFillSunFill } from "react-icons/bs";
 import { AiFillBell } from "react-icons/ai";
 import { useEffect, useState } from "react";
 
@@ -34,7 +35,11 @@ export const Topbar = () => {
       <div className="d-flex align-items-center">
         <AiFillHeart className="text-danger iconTopBar" />
         <AiFillBell className="text-warning iconTopBar ms-2" />
-        <AiFillSetting onClick={handleChange} className="iconTopBar ms-2" />
+        {theme ? (
+          <BsFillSunFill onClick={handleChange} className="iconTopBar ms-2" />
+        ) : (
+          <BsFillMoonFill onClick={handleChange} className="iconTopBar ms-2" />
+        )}
       </div>
     </Container>
   );
