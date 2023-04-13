@@ -36,7 +36,7 @@ export const CalendarHome = () => {
     {
       id: "1",
       title: "Capstone Project",
-      start: "2023-04-07",
+      start: "2023-04-14",
       allDay: true,
     },
     {
