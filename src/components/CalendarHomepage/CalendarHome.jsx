@@ -32,20 +32,7 @@ export const CalendarHome = () => {
     }
   };
 
-  const initialEvents = [
-    {
-      id: "1",
-      title: "Capstone Project",
-      start: "2023-04-14",
-      allDay: true,
-    },
-    {
-      id: "2",
-      title: "Easter",
-      start: "2023-04-09",
-      allDay: true,
-    },
-  ];
+  const initialEvents = [];
 
   return (
     <div className="bgAllDiv mt-3 p-3">
@@ -67,7 +54,7 @@ export const CalendarHome = () => {
           </Form>
         </Modal.Body>
         <div className="text-end pe-3 pb-3">
-          <Button variant="secondary" onClick={handleClose}>
+          <Button variant="secondary me-2" onClick={handleClose}>
             Close
           </Button>
           <Button
